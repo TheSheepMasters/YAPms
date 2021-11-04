@@ -36,13 +36,16 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 			case "NewMexico":
 				$state = "New Mexico";
 				break;
+			case "NewYork":
+				$state = "New York";
+				break;
 		}	
 		$year = htmlspecialchars($split[1]);
 		echo "<meta name=\"description\" content=\"Interactive {$state} {$year} Lower State Legislature Map\">
 			<title>USA - {$state} {$year} Lower State Legislature Election Map</title>
 			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} Lower State Legislature Map\">
 			<meta property=\"og:description\" content=\"Interactive {$state} {$year} Lower State Legislature Map\">";
-		$h1title = "{$state} Lower Legislature";
+		$h1title = "{$state} {$year} Lower Legislature";
 	} else if(strpos($_GET['t'], 'state_upper')) {
 		$split = explode('_', $_GET['t']);
 		$state = $split[0];
@@ -59,7 +62,7 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 			<title>USA - {$state} {$year} Upper State Legislature Election Map</title>
 			<meta property=\"og:title\" content=\"YAPms - USA {$state} {$year} Upper State Legislature Map\">
 			<meta property=\"og:description\" content=\"Interactive {$state} {$year} Upper State Legislature Map\">";
-		$h1title = "{$state} Upper Legislature";
+		$h1title = "{$state} {$year} Upper Legislature";
 	} else {
 	switch($_GET['t']) {
 		case 'USA_2022_senate':

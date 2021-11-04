@@ -1,3 +1,4 @@
 external/config.json
 public/app/www-data/
 node_modules/
+*.swp

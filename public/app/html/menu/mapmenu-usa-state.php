@@ -14,109 +14,112 @@
 	<div class="selectmenu-split-text">Upper</div>
 </a>
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_upper">
-	<div class="selectmenu-button-text">Arkansas</div>
+	<div class="selectmenu-button-text">Arkansas 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=California_2020_state_upper">
-	<div class="selectmenu-button-text">California</div>
+	<div class="selectmenu-button-text">California 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Florida_2020_state_upper">
-	<div class="selectmenu-button-text">Florida</div>
+	<div class="selectmenu-button-text">Florida 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Idaho_2020_state_upper">
-	<div class="selectmenu-button-text">Idaho</div>
+	<div class="selectmenu-button-text">Idaho 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Iowa_2020_state_upper">
-	<div class="selectmenu-button-text">Iowa</div>
+	<div class="selectmenu-button-text">Iowa 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Minnesota_2020_state_upper">
-	<div class="selectmenu-button-text">Minnesota</div>
+	<div class="selectmenu-button-text">Minnesota 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=NewJersey_2020_state_upper">
-	<div class="selectmenu-button-text">New Jersey</div>
+	<div class="selectmenu-button-text">New Jersey 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=NorthDakota_2020_state_upper">
-	<div class="selectmenu-button-text">North Dakota</div>
+	<div class="selectmenu-button-text">North Dakota 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Ohio_2020_state_upper">
-	<div class="selectmenu-button-text">Ohio</div>
+	<div class="selectmenu-button-text">Ohio 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Pennsylvania_2020_state_upper">
-	<div class="selectmenu-button-text">Pennsylvania</div>
+	<div class="selectmenu-button-text">Pennsylvania 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Texas_2020_state_upper">
-	<div class="selectmenu-button-text">Texas</div>
+	<div class="selectmenu-button-text">Texas 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Virginia_2020_state_upper">
-	<div class="selectmenu-button-text">Virginia</div>
+	<div class="selectmenu-button-text">Virginia 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Washington_2020_state_upper">
-	<div class="selectmenu-button-text">Washington</div>
+	<div class="selectmenu-button-text">Washington 2020</div>
 </a>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Lower</div>
 </a>
 <a class="selectmenu-button" href="./?t=Alabama_2020_state_lower">
-	<div class="selectmenu-button-text">Alabama</div>
+	<div class="selectmenu-button-text">Alabama 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Alaska_2020_state_lower">
-	<div class="selectmenu-button-text">Alaska</div>
+	<div class="selectmenu-button-text">Alaska 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_lower">
-	<div class="selectmenu-button-text">Arkansas</div>
+	<div class="selectmenu-button-text">Arkansas 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=California_2020_state_lower">
-	<div class="selectmenu-button-text">California</div>
+	<div class="selectmenu-button-text">California 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Colorado_2020_state_lower">
-	<div class="selectmenu-button-text">Colorado</div>
+	<div class="selectmenu-button-text">Colorado 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Connecticut_2020_state_lower">
-	<div class="selectmenu-button-text">Connecticut</div>
+	<div class="selectmenu-button-text">Connecticut 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Florida_2020_state_lower">
-	<div class="selectmenu-button-text">Florida</div>
+	<div class="selectmenu-button-text">Florida 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Hawaii_2020_state_lower">
-	<div class="selectmenu-button-text">Hawaii</div>
+	<div class="selectmenu-button-text">Hawaii 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Iowa_2020_state_lower">
-	<div class="selectmenu-button-text">Iowa</div>
+	<div class="selectmenu-button-text">Iowa 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Michigan_2020_state_lower">
-	<div class="selectmenu-button-text">Michigan</div>
+	<div class="selectmenu-button-text">Michigan 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Minnesota_2020_state_lower">
-	<div class="selectmenu-button-text">Minnesota</div>
+	<div class="selectmenu-button-text">Minnesota 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=NorthDakota_2020_state_lower">
-	<div class="selectmenu-button-text">North Dakota</div>
+	<div class="selectmenu-button-text">North Dakota 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=NewJersey_2020_state_lower">
-	<div class="selectmenu-button-text">New Jersey</div>
+	<div class="selectmenu-button-text">New Jersey 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=NewMexico_2020_state_lower">
-	<div class="selectmenu-button-text">New Mexico</div>
+	<div class="selectmenu-button-text">New Mexico 2020</div>
+</a>
+<a class="selectmenu-button" href="./?t=NewYork_2020_state_lower">
+	<div class="selectmenu-button-text">New York 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Ohio_2020_state_lower">
-	<div class="selectmenu-button-text">Ohio</div>
+	<div class="selectmenu-button-text">Ohio 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Oregon_2020_state_lower">
-	<div class="selectmenu-button-text">Oregon</div>
+	<div class="selectmenu-button-text">Oregon 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Pennsylvania_2020_state_lower">
-	<div class="selectmenu-button-text">Pennsylvania</div>
+	<div class="selectmenu-button-text">Pennsylvania 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Texas_2020_state_lower">
-	<div class="selectmenu-button-text">Texas</div>
+	<div class="selectmenu-button-text">Texas 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Virginia_2020_state_lower">
-	<div class="selectmenu-button-text">Virginia</div>
+	<div class="selectmenu-button-text">Virginia 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Washington_2020_state_lower">
-	<div class="selectmenu-button-text">Washington</div>
+	<div class="selectmenu-button-text">Washington 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Wisconsin_2020_state_lower">
-	<div class="selectmenu-button-text">Wisconsin</div>
+	<div class="selectmenu-button-text">Wisconsin 2020</div>
 </a>
 </div>
 </div>

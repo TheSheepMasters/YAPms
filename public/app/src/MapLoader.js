@@ -207,9 +207,9 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/newmexico/2020_house.svg", 16, 0.1, "1", "takeall_noedit", "open");
 				break;
-			case "NewYork_2021_state_upper":
+			case "NewYork_2020_state_lower":
 				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/newyork/2021_senate.svg", 16, 0.1, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/usa/newyork/2020_lower.svg", 16, 0.1, "1", "takeall_noedit", "open");
 				break;
 			case "NorthCarolina_2020_state_upper":
 				PresetLoader.loadPreset("classic");
