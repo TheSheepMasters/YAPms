@@ -1,0 +1,71 @@
+#menu-div {
+	z-index: 3;
+	background-color: #2f3136;
+	text-align: center;
+
+	position: relative;
+
+	display: inline-flex;
+	flex-direction: row;
+	width: 100%;
+
+	overflow-y: hidden;
+	overflow-x: auto;
+
+	margin-bottom: 1px;
+}
+
+.click-button {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	background-color: #f2eee6;
+	color: #000000;
+	cursor: pointer;
+	margin-right: 1px;
+	height: 100%;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 1px;
+	text-decoration: none;
+}
+
+.highlight-button {
+	padding-left: 12px;
+	padding-right: 12px;
+	transition: opacity 250ms;
+}
+
+.lock-button {
+	padding-left: 12px;
+	padding-right: 12px;
+	transition: opacity 250ms;
+}
+
+.lock-button:hover .tooltip-menu {
+	display: block;
+}
+
+.mode-button {
+	padding-left: 12px;
+	padding-right: 12px;
+	transition: opacity 250ms;
+}
+
+.mode-button:hover .tooltip-menu {
+	display: block;
+}
+
+.tooltip-menu {
+	display: none;
+	position: fixed;
+	background-color: black;
+	color: white;
+	z-index: 100;
+	margin-top: 6px;
+	padding: 7px;
+	border-radius: 8px;
+}
+
+.tooltip-menu:hover {
+	display: none;
+}

@@ -1,0 +1,240 @@
+.selectmenu {
+	display: none;
+	flex-direction: column;
+}
+
+.selectmenu-content {
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-bottom: 6px;
+}
+
+.selectmenu-header {
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	border-bottom: 1px solid black;
+}
+
+.selectmenu .selectmenu-button:hover {
+	background-color: #bbbbbb;
+	cursor: pointer;
+}
+
+.selectmenu .selectmenu-split {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: row;
+	text-align: center;
+	background-color: #000000;
+	color: white;
+	border-radius: 10px;
+	padding: 6px;
+	margin-top: 4px;
+}
+
+.selectmenu-split svg {
+	margin-right: 5px;
+}
+
+.selectmenu-split .selectmenu-split-text {
+	flex: 1 1;
+}
+
+input[type=submit] {
+	display: block;
+	width: 100%;
+	border: none;
+	font-size: inherit;
+}
+
+.selectmenu-button {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: row;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #eeeeee;
+	padding: 12px;
+	margin-top: 4px;
+}
+
+.selectmenu-button img {
+	height: 20px;
+	width: 32px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	margin-right: 5px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.selectmenu-button svg {
+	margin-right: 5px;
+}
+
+.selectmenu-button-text {
+	flex: 1 1;
+}
+
+h2.selectmenu-toptext {
+    flex: 1 1;
+}
+
+.selectmenu-section {
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #eeeeee;
+	padding: 12px;
+	margin-top: 4px;
+}
+
+.selectmenu-button-mult {
+	display: flex;
+	flex-direction: row;
+}
+
+.selectmenu-button-part {
+	flex: 1 1;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+.selectmenu-button-double {
+	display: flex;
+	flex-direction: row;
+}
+
+#mymapmenu .selectmenu-button-double {
+	width: 100%;
+}
+
+.selectmenu-button-left {
+	flex: 1 1 65%;
+	overflow: hidden;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.selectmenu-button-right {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.selectmenu-red {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #bf1d29, #ff5865, #ff8b98, #cf8980);
+}
+
+.selectmenu-red-light {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #ff5555, #ff8080, #ffaaaa, #ffd5d5);
+}
+
+.selectmenu-red-dark {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #80302e, #cb4b40, #fb817f, #f5c8c4);
+}
+
+.selectmenu-blue {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #1c408c, #577ccc, #8aafff, #949bb3);
+}
+
+.selectmenu-blue-light {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #5555ff, #8080ff, #aaaaff, #d5d5ff);
+}
+
+.selectmenu-blue-dark {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #302e80, #444cc5, #817ffb, #cdd3f7);
+}
+
+.selectmenu-green {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #1c8c28, #50c85e, #8aff97, #7a997e);
+}
+
+.selectmenu-yellow {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #e6b700, #e8c84d, #ffe78a, #b8a252);
+}
+
+#downloadbutton .selectmenu-button-part-text {
+	flex: 1 1;
+	margin: 0px;
+}
+
+#sharebuttons svg {
+	flex: 1 1;
+	margin: 0px;
+}
+
+#facebook-share {
+	color: white;
+	background: #3A5E96;
+}
+
+#twitter-share {
+	color: white;
+	background: #00A1ED;
+}
+
+#reddit-share {
+	color: white;
+	background: #FF4A1F;
+}
+
+.selectmenu-button-bold {
+	color: white;
+	font-weight: bold;
+}
+
+.selectmenu-display-header {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+.selectmenu-display-header img {
+	height: 28px;
+	border-radius: 4px;
+	margin-right: 5px;
+}
+
+.selectmenu-display-header-text {
+	flex: 1 1;
+}
+
+.selectmenu-controls {
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    background: #dddddd;
+}
+
+.selectmenu-toptext {
+    display: flex;
+    flex-direction: row;
+    text-align: center
+}

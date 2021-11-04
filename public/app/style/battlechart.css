@@ -1,0 +1,69 @@
+#battlechart {
+	display: none;
+	flex: 1 1;
+}
+
+#battlechartleft {
+	margin: auto;
+}
+
+#battlechartright {
+	display: flex;
+	flex-direction: column;
+	border: 0px solid black;
+	border-radius: 5px;
+	overflow: hidden;
+	flex: 1 1;
+	margin: 0px;
+}
+
+#battlechart p {
+	margin: auto;
+}
+
+#battlechartmid {
+	margin: auto;
+}
+
+#battlechart div {
+	display: flex;
+}
+
+#topbar {
+	flex-direction: column;
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #bf1d29;
+	transition: flex-basis 175ms linear;
+	z-index: 1;
+	min-height: 0px;
+}
+
+#tossupbar {
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #bbb7b2;
+	transition: flex-basis 175ms linear;
+	overflow: hidden;
+}
+
+#bottombar {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #1c408c;
+	transition: flex-basis 175ms linear;
+	z-index: 1;
+	min-height: 0;
+	overflow: visible;
+}
+
+.bar-part {
+	overflow: hidden;
+	background: #8aafff;
+	flex: 1 1;
+	flex-basis: 0%;
+	transition: flex-basis 175ms linear;
+	min-height: 0;
+}

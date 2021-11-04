@@ -1,0 +1,48 @@
+.popup {
+	display: none;
+	background-color: #ffffff;
+	border: 1px solid black;
+	border-radius: 10px;
+
+	padding: 0px;	
+	z-index: 10;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	max-height: 80%;
+	transform: translate(-50%, -50%);
+
+	overflow-y: hidden;
+}
+
+/* make the close button stay on the left */
+.popup object {
+	height: 24px;
+	text-align: left;
+	flex: 1 1;
+}
+
+.popup h2 {
+	flex: 1 1;
+	margin: 0px;
+	white-space: nowrap;
+}
+
+.setbutton {
+	color: white;
+	background-color: green;
+	padding: 8px;
+	margin: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	border: 1px solid black;
+	border-radius: 6px;
+}
+
+#loading-animation {
+	position: relative;
+	width: auto;
+	height: auto;
+	float: none;
+}

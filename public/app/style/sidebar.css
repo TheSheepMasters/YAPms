@@ -1,0 +1,235 @@
+#sidebar {
+	overflow-y: auto;
+	overflow-x: hidden;
+	display: inline-flex;
+	flex-direction: column;
+	border-left: 1px solid black;
+	min-width: 348px;
+	max-width: 348px;
+	width: 348px;
+	background: #fafafa;
+}
+
+#sidebar-header {
+	font-family: Times;
+	font-size: 28px;
+}
+
+#sidebar-header h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.adslot_sidebar {
+	max-width: 336px;
+}
+
+.IL_BASE {
+	min-height: 255px;
+}
+
+#sidebar-social {
+	display: flex;
+	flex-direction: row;
+	margin-top: 6px;
+	min-height: 1.75em;
+}
+
+.sidebar-button {
+	border-radius: 10px;
+	border: 1px solid black;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin: 1px;
+}
+
+.social-link {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	flex: 1;
+}
+
+#sidebar-discord {
+	background: #7289da;
+}
+
+#sidebar-reddit {
+	background: #ff4500;
+}
+
+#sidebar-android {
+	background: #7db343;
+}
+
+#sidebar-twitter {
+	background: #00A1ED;
+}
+
+.sidebar-box {
+	font-family: 'Roboto';
+	font-size: 14px;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-box h3 {
+	margin: 5px;
+	padding: 0px;
+}
+
+.sidebar-box-settings {
+	display: inline-block;
+	text-align: left;
+}
+
+.sidebar-tool-button {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+
+.sidebar-tool-button i {
+	display: inline-block;
+	padding: 5px;
+	margin: 0px;
+}
+
+.sidebar-tool-button h4 {
+	display: inline-block;
+	padding: 5px;
+	margin: 0px;
+}
+
+.sidebar-tool-button h4 {
+	display: inline-block;
+	padding: 5px;
+	margin: 0px;
+}
+
+.sidebar-tool {
+	display: none;
+	border-left: 3px solid black;
+}
+
+.sidebar-info-box p {
+	margin: 6px;
+}
+
+.sidebar-info-box a:link {
+	color: #5555ff;
+}
+
+.sidebar-info-box a:visited {
+	color: #5555ff;
+}
+
+.sidebar-hover-popup {
+	margin: 0px;
+	padding: 0px;
+}
+
+.sidebar-hover-popup .tooltip-text {
+	position: absolute;
+	visibility: hidden;
+	width: 250px;
+	background: #444444;
+	color: white;
+	border-radius: 6px;
+	text-align: center;
+	padding: 4px;
+	margin-left: 12px;
+}
+
+.sidebar-hover-popup:hover .tooltip-text {
+	pointer-events: none;
+	visibility: visible;
+}
+
+.sidebar-congress-colors {
+	display: flex;
+	flex-direction: row;
+	height: 30px;
+	margin: auto;
+	width: 80%;
+	color: white;
+}
+
+.sidebar-congress-color {
+	flex: 1 1;
+	border-radius: 8px;
+	margin: 3px;
+}
+
+.sidebar-congress-color span {
+	line-height: 24px;
+}
+
+#sidebar-shortcuts ul {
+	margin: 8px;
+	padding: 0px;
+	text-align: left;
+	list-style: none;
+	list-style-position: inside;
+}
+
+#sidebar-shortcuts > ul > li {
+	margin-bottom: 0.1em;
+}
+
+#yapnews-articles {
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+	font-family: Times;
+}
+
+@media screen and (min-width: 1602px) {
+	#sidebar {
+		min-width: 348px;
+		max-width: 348px;
+		width: 348px;
+	}
+	
+	.adslot_sidebar {
+		max-width: 336px;
+		max-height: 336px;
+	}
+}
+
+@media screen and (max-width: 1601px) {
+	#sidebar {
+		min-width: 312px;
+		max-width: 312px;
+		width: 312px;
+	}
+	
+	.adslot_sidebar {
+		max-width: 300px;
+		max-height: 336px;
+	}
+
+	.social-link {
+		font-size: 16px;
+	}
+
+}
+
+@media screen and (max-width: 1367px) {
+	#sidebar {
+		min-width: 262px;
+		max-width: 262px;
+		width: 262px;
+	}
+	
+	.adslot_sidebar {
+		max-width: 250px;
+		max-height: 336px;
+	}
+
+	.social-link {
+		font-size: 14px;
+	}
+}

@@ -1,0 +1,84 @@
+#legend-div {
+	position: absolute;
+	border-color: #2f3136;
+	z-index: 2;
+	pointer-events: none;
+	top: 0px;
+	margin-top: 4px;
+}
+
+.legend-button {
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 1px;
+	margin-right: 1px;
+	vertical-align: top;
+	pointer-events: auto;
+	border: 1px solid;
+	border-color: inherit;
+}
+
+.legend-delete {
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 1px;
+	margin-right: 1px;
+	vertical-align: top;
+	pointer-events: auto;
+	border: 1px solid;
+	border-color: inherit;
+}
+
+.legend-delete-text {
+	color: inherit;
+}
+
+.legend-color-div {
+	display: flex;
+	flex-direction: row;
+}
+
+.legend-color {
+	min-height: 10px;
+	min-width: 20px;
+	flex: 1;
+}
+
+.legend-button-text {
+	color: inherit;
+	transition: all 100ms;
+	transition-timing-function: linear;
+}
+
+.flash_animation {
+	animation-name: flash_keyframes;
+	animation-duration: 1.5s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+@keyframes flash_keyframes {
+	0% {
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+#legend-tooltip {
+	display: block;
+	position: relative;
+	color: white;
+	border-radius: 6px;
+	margin-top: 6px;
+	font-size: 16px;
+	background-color: black;
+	opacity: 0.0;
+	transition: opacity 0.5s;
+}
