@@ -32,9 +32,9 @@
 	<i class="fas fa-desktop"></i>
 	<div class="selectmenu-button-text">RedEagle</div>
 </a>
-<a class="selectmenu-button" onclick="LogoManager.toggleLogo('PG')">
+<a class="selectmenu-button" onclick="LogoManager.toggleLogo('PoliticalAnalyst')">
 	<i class="fas fa-desktop"></i>
-	<div class="selectmenu-button-text">PoliticsGaming</div>
+	<div class="selectmenu-button-text">Political Analysis</div>
 </a>
 <a class="selectmenu-button" onclick="LogoManager.toggleLogo('EP')">
 	<i class="fas fa-desktop"></i>
@@ -44,9 +44,9 @@
 	<i class="fas fa-desktop"></i>
 	<div class="selectmenu-button-text">Red Donkey Projections</div>
 </a>
-<a class="selectmenu-button" onclick="LogoManager.toggleLogo('PoliticalAnalyst')">
+<a class="selectmenu-button" onclick="LogoManager.toggleLogo('PG')">
 	<i class="fas fa-desktop"></i>
-	<div class="selectmenu-button-text">Political Analyst</div>
+	<div class="selectmenu-button-text">PoliticsGaming</div>
 </a>
 </div>
 </div>

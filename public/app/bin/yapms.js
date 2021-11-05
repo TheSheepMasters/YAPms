@@ -1482,22 +1482,22 @@ class LogoManager {
 		var logoSlot = document.getElementById("logo-div");
 		switch(name) {
 			case "LTE":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/lte.png")';
+			logoSlot.style.backgroundImage = 'url("./res/logos/lte.png")';
 			break;
 			case "RedEagle":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/redeagletv.png")';
+			logoSlot.style.backgroundImage = 'url("./res/logos/redeagletv.png")';
 			break;
 			case "PG":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/pg.png")';
+			logoSlot.style.backgroundImage = 'url("./res/logos/pg.png")';
 			break;
 			case "EP":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/ep.png")';
+			logoSlot.style.backgroundImage = 'url("./res/logos/ep.png")';
 			break;
 			case "RedDonkey":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/reddonkey.png")';
+			logoSlot.style.backgroundImage = 'url("./res/logos/reddonkey.png")';
 			break;
 			case "PoliticalAnalyst":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/pa.jpg")';
+			logoSlot.style.backgroundImage = 'url("./res/logos/pa.png")';
 			break;
 		}
 	
@@ -6073,7 +6073,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v3.5.0';
+const currentCache = 'v3.5.1';
 
 let states = [];
 let lands = [];
