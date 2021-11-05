@@ -21,5 +21,8 @@
 <a class="selectmenu-button selectmenu-yellow" onclick='CandidateManager.setColors("yellow"); displayMenu("addcandidatemenu");'>
 	<div class="selectmenu-button-text">Yellow</div>
 </a>
+<a class="selectmenu-button selectmenu-purple" onclick='CandidateManager.setColors("purple"); displayMenu("addcandidatemenu");'>
+	<div class="selectmenu-button-text">Purple</div>
+</a>
 </div>
 </div>

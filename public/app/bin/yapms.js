@@ -762,6 +762,11 @@ class CandidateManager {
 			likely.value = '#cb4b40';
 			leaning.value = '#fb817f';
 			tilting.value = '#f5c8c4';
+		} else if(palette === 'purple') {
+			solid.value = '#822194';
+			likely.value = '#ae20c6';
+			leaning.value = '#db14ff';
+			tilting.value = '#a369ae';
 		} else {
 			solid.value = CookieManager.cookies[palette + 'solid'];
 			likely.value = CookieManager.cookies[palette + 'likely'];
@@ -6068,7 +6073,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v3.4.3';
+const currentCache = 'v3.5.0';
 
 let states = [];
 let lands = [];
