@@ -10,13 +10,14 @@
 	<meta name="HandheldFriendly" content="true">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	
-	<meta property="og:image:type" content="image/png">
+	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="yapms.com">
-	<meta property="og:type" content="article">
+	<meta property="og:title" content="yapms.com">
+	<meta property="og:description" content="Interactive Political Maps">
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="yapms.com">
-	<meta name="twitter:description" content="Interactive Political Maps">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content="yapms.com">
+	<meta property="twitter:description" content="Interactive Political Maps">
 
 	<meta name="theme-color" content="#ffffff"/>
 	<link rel="icon" href="./res/yapms/yapms-16.png" sizes="16x16" type="image/png"/>
@@ -43,28 +44,26 @@
 		$userid = "-1";
 		$userMap = "false";
 		$loadMapID = 0;
-		$linkURL = "./app/";
-		$secureImageURL = "./app/res/yapms/yapms-96.png";
-		$imageURL = "./app/res/yapms/yapms-96.png";
+		$linkURL = "https://{$_SERVER['SERVER_NAME']}/app/";
+		$imageURL = "https://{$_SERVER['SERVER_NAME']}/app/res/yapms/yapms-96.png";
+		$protocol = isset($_SERVER['HTTPS']) ? "https" : "http";
+		$servername = $_SERVER['SERVER_NAME'];
 		if(isset($_GET["m"])) {
 			$loadMap = "true";
 			$loadMapID = $_GET["m"];
-			$imageURL = "./app/www-data/maps/{$loadMapID}.png";
-			$secureImageURL = "./app/www-data/maps/{$loadMapID}.png";
-			$linkURL = "./app/?m={$loadMapID}";
+			$imageURL = "{$protocol}://{$servername}/app/www-data/maps/{$loadMapID}.png";
+			$linkURL = "{$protocol}://{$servername}/app/?m={$loadMapID}";
 			if(isset($_GET["u"])) {
 				$userMap = "true";
 				$userid = $_GET["u"];
-				$imageURL = "./app/www-data/users/{$userid}/{$loadMapID}.png";
-				$secureImageURL = "./app/www-data/users/{$userid}/{$loadMapID}.png";
-				$linkURL = "./app/www-data/app/?u={$userid}&m={$loadMapID}";
+				$imageURL = "{$protocol}://{$servername}/app/www-data/users/{$userid}/{$loadMapID}.png";
+				$linkURL = "{$protocol}://{$servername}/app/www-data/app/?u={$userid}&m={$loadMapID}";
 			}
 		} else if(isset($_GET["t"])) {
 			$loadTypeMap = "true";
 			$loadMapID = $_GET["t"];
-			$imageURL = "./app/res/yapms/yapms-96.png";
-			$secureImageURL = "./app/res/yapms/yapms-96.png";
-			$linkURL = "./app/?t={$loadMapID}";
+			$imageURL = "{$protocol}://{$servername}/app/res/yapms/yapms-96.png";
+			$linkURL = "{$protocol}://{$servername}/app/?t={$loadMapID}";
 		}
 
 		echo "<script>
@@ -78,10 +77,10 @@
 		var php_load_map_id = \"{$loadMapID}\";
 		</script>";
 
-		echo "<meta property='og:image:secure_url' content='{$secureImageURL}'>
-		<meta property='og:image' content='{$imageURL}'>
-		<meta name='twitter:image' content='{$imageURL}'>
-		<meta property='og:url' content='{$linkURL}'>";
+		echo "<meta property='og:image' content='{$imageURL}'>
+		<meta property='og:url' content='{$linkURL}'>
+		<meta property='twitter:image' content='{$imageURL}'>
+		<meta property='twitter:url' content='{$linkURL}'>";
 ?>
 
 	<!-- Ads -->
@@ -101,7 +100,7 @@
 		gtag('config', 'G-0NFKPJSSSY');
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="./bin/yapms.css">
+	<link rel="stylesheet" href="./bin/yapms.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
 	<script defer src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js"></script>
