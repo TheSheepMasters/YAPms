@@ -57,6 +57,7 @@ class SaveMap {
 	}
 
 	static upload(img, token) {
+		console.log('token: ' + token);
 		var formData = new FormData();
 		formData.append("captcha", token);
 		formData.append("img", img);
@@ -71,11 +72,6 @@ class SaveMap {
 		data['candidates'] = {};
 		data['states'] = {};
 		data['proportional'] = {};
-
-		var formData = new FormData();
-		console.log('token: ' + token);
-		formData.append("captcha", token);
-		formData.append("img", img);
 
 		for(var key in CandidateManager.candidates) {
 			if(key === 'Tossup') {
@@ -121,7 +117,6 @@ class SaveMap {
 		
 		formData.append("data", JSON.stringify(data));
 
-		//fetch("https://yapms.org/upload.php", {
 		fetch("./api/maps/upload.php", {
 			method: "POST",
 			body: formData

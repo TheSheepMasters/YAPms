@@ -1,4 +1,21 @@
 <?php
+
+$config = json_decode(file_get_contents("../../../../external/config.json"), true);
+$secret = $config["recaptcha_secret"];
+$response = $_POST["captcha"];
+$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
+$isVerified = json_decode($verify);
+
+if($isVerified->success === false) {
+	echo "reCaptcha_Failed(restart_web_browser)";
+	die();
+}
+
+if($isVerified->score < 0.5) {
+	echo "reCaptcha_Bot_Detected";
+	die();
+}
+
 $mapnumber = 0;
 
 $sql_select = "SELECT * FROM mapcount";
