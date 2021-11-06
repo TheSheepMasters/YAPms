@@ -10,14 +10,14 @@
 	<meta name="HandheldFriendly" content="true">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
 	<meta property="og:site_name" content="yapms.com">
 	<meta property="og:title" content="yapms.com">
 	<meta property="og:description" content="Interactive Political Maps">
 
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:title" content="yapms.com">
-	<meta property="twitter:description" content="Interactive Political Maps">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="yapms.com">
+	<meta name="twitter:description" content="Interactive Political Maps">
 
 	<meta name="theme-color" content="#ffffff"/>
 	<link rel="icon" href="./res/yapms/yapms-16.png" sizes="16x16" type="image/png"/>
@@ -79,8 +79,8 @@
 
 		echo "<meta property='og:image' content='{$imageURL}'>
 		<meta property='og:url' content='{$linkURL}'>
-		<meta property='twitter:image' content='{$imageURL}'>
-		<meta property='twitter:url' content='{$linkURL}'>";
+		<meta name='twitter:image' content='{$imageURL}'>
+		<meta name='twitter:url' content='{$linkURL}'>";
 ?>
 
 	<!-- Ads -->
