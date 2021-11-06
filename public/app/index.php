@@ -43,28 +43,28 @@
 		$userid = "-1";
 		$userMap = "false";
 		$loadMapID = 0;
-		$linkURL = "https://www.yapms.com/app/";
-		$secureImageURL = "https://www.yapms.com/app/res/yapms/yapms-96.png";
-		$imageURL = "http://www.yapms.com/app/res/yapms/yapms-96.png";
+		$linkURL = "./app/";
+		$secureImageURL = "./app/res/yapms/yapms-96.png";
+		$imageURL = "./app/res/yapms/yapms-96.png";
 		if(isset($_GET["m"])) {
 			$loadMap = "true";
 			$loadMapID = $_GET["m"];
-			$imageURL = "http://yapms.org/maps/{$loadMapID}.png";
-			$secureImageURL = "https://yapms.org/maps/{$loadMapID}.png";
-			$linkURL = "https://www.yapms.com/app/?m={$loadMapID}";
+			$imageURL = "./app/www-data/maps/{$loadMapID}.png";
+			$secureImageURL = "./app/www-data/maps/{$loadMapID}.png";
+			$linkURL = "./app/?m={$loadMapID}";
 			if(isset($_GET["u"])) {
 				$userMap = "true";
 				$userid = $_GET["u"];
-				$imageURL = "http://yapms.org/users/{$userid}/{$loadMapID}.png";
-				$secureImageURL = "https://yapms.org/users/{$userid}/{$loadMapID}.png";
-				$linkURL = "https://www.yapms.com/app/?u={$userid}&m={$loadMapID}";
+				$imageURL = "./app/www-data/users/{$userid}/{$loadMapID}.png";
+				$secureImageURL = "./app/www-data/users/{$userid}/{$loadMapID}.png";
+				$linkURL = "./app/www-data/app/?u={$userid}&m={$loadMapID}";
 			}
 		} else if(isset($_GET["t"])) {
 			$loadTypeMap = "true";
 			$loadMapID = $_GET["t"];
-			$imageURL = "http://www.yapms.com/app/res/yapms/yapms-96.png";
-			$secureImageURL = "https://www.yapms.com/app/res/yapms/yapms-96.png";
-			$linkURL = "https://www.yapms.com/app/?t={$loadMapID}";
+			$imageURL = "./app/res/yapms/yapms-96.png";
+			$secureImageURL = "./app/res/yapms/yapms-96.png";
+			$linkURL = "./app/?t={$loadMapID}";
 		}
 
 		echo "<script>
