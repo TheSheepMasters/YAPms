@@ -23,7 +23,7 @@ function sendVerification($email, $password, $token) {
 			</p>
 			<h3>Verify Link</h3>
 			<p>
-				<a href='https://www.yapms.online/app/api/users/verify.php?email={$email}&token={$token}'>
+				<a href='https://www.yapms.com/app/api/users/verify.php?email={$email}&token={$token}'>
 					Click this link to verify your account
 				</a>
 			</p>
@@ -35,7 +35,7 @@ function sendVerification($email, $password, $token) {
 	
 	Password: {$password}
 	
-	Verify Link: https://www.yapms.online/app/api/users/verify.php?email={$email}&token={$token}";
+	Verify Link: https://www.yapms.com/app/api/users/verify.php?email={$email}&token={$token}";
 
 	//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 	$mail->isSMTP();

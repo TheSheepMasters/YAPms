@@ -19,7 +19,7 @@ function sendReset($email, $token) {
 			</p>
 			<h3>Password Reset Link</h3>
 			<p>
-				https://www.yapms.online/app/api/users/reset_password.php?email={$email}&token={$token}
+				https://www.yapms.com/app/api/users/reset_password.php?email={$email}&token={$token}
 			</p>
 			<p>
 				After clicking this link, you'll receive an email with your new temporary password.
@@ -31,7 +31,7 @@ function sendReset($email, $token) {
 	If you did not request a password reset, you can ignore this message.
 	
 	Password Reset Link:
-				https://www.yapms.online/app/api/users/reset_password.php?email={$email}&token={$token}";
+				https://www.yapms.com/app/api/users/reset_password.php?email={$email}&token={$token}";
 
 	$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 	$mail->isSMTP();
