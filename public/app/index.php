@@ -168,6 +168,7 @@ require "./html/menu/ecedit.php";
 require "./html/menu/candidateedit.php";
 require "./html/menu/classiccolormenu.php";
 require "./html/menu/altcolormenu.php";
+require "./html/menu/wikicolormenu.html";
 require "./html/menu/customcolormenu.php";
 require './html/menu/customcoloreditor.php';
 require './html/menu/addcandidatemenu.php';

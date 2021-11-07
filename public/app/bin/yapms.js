@@ -765,6 +765,26 @@ class CandidateManager {
 			likely.value = '#ae20c6';
 			leaning.value = '#db14ff';
 			tilting.value = '#a369ae';
+		} else if(palette === 'democratic-wiki') {
+			solid.value = '#002b84';
+			likely.value = '#1666cb';
+			leaning.value = '#86b6f2';
+			tilting.value = '#d3e7ff';
+		} else if(palette === 'republican-wiki') {
+			solid.value = '#800000';
+			likely.value = '#d40000';
+			leaning.value = '#e27f90';
+			tilting.value = '#ffccd0';
+		} else if(palette === 'dixiecrat-wiki') {
+			solid.value = '#aa4400';
+			likely.value = '#ff6600';
+			leaning.value = '#ff9955';
+			tilting.value = '#ffccaa';
+		} else if(palette === 'unpledged-wiki') {
+			solid.value = '#be9600';
+			likely.value = '#f4c200';
+			leaning.value = '#ffe680';
+			tilting.value = '#ffeeaa';
 		} else {
 			solid.value = CookieManager.cookies[palette + 'solid'];
 			likely.value = CookieManager.cookies[palette + 'likely'];
@@ -6066,7 +6086,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.0.1';
+const currentCache = 'v4.0.2';
 
 let states = [];
 let lands = [];

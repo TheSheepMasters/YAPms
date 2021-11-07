@@ -505,6 +505,30 @@ h2.selectmenu-toptext {
 	background: linear-gradient(to right, #822194, #ae20c6, #db14ff, #a369ae);
 }
 
+.selectmenu-democratic-wiki {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #002b84, #1666cb, #86b6f2, #d3e7ff);
+}
+
+.selectmenu-republican-wiki {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #800000, #d40000, #e27f90, #ffccd0);
+}
+
+.selectmenu-dixiecrat-wiki {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #aa4400, #ff6600, #ff9955, #ffccaa);
+}
+
+.selectmenu-unpledged-wiki {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, #be9600, #f4c200, #ffe680, #ffeeaa);
+}
+
 #downloadbutton .selectmenu-button-part-text {
 	flex: 1 1;
 	margin: 0px;

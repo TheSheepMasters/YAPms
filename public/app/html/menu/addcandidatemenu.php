@@ -8,9 +8,12 @@
 </div>
 </div>
 <div class="selectmenu-content">
-<div class="selectmenu-section">Name<input id="name" type="text"></div>
+<div class="selectmenu-section">Name&nbsp;<input id="name" type="text" autocomplete="off"></div>
 <a class="selectmenu-button" onclick='displayMenu("classiccolormenu")'>
 	<div class="selectmenu-button-text">Classic Colors</div>
+</a>
+<a class="selectmenu-button" onclick='displayMenu("wikicolormenu")'>
+	<div class="selectmenu-button-text">Wikipedia Colors</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("altcolormenu")'>
 	<div class="selectmenu-button-text">Alt Colors</div>
