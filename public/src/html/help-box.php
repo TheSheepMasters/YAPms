@@ -19,4 +19,7 @@
 	<a class="social twitter" href="https://twitter.com/YAPmsOfficial" target="_blank">
 		<i class="fab fa-twitter"></i> Twitter
 	</a>
+	<a class="social nationstates" href="https://www.nationstates.net/region=yapmissia" target="_blank">
+		<i class="fas fa-landmark"></i> Nation States
+	</a>
 </div>
