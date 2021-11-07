@@ -421,10 +421,9 @@ class Account {
 		var mapPreview = document.createElement('img');
 		mapPreview.className = "mysaves-mappreview";
 		mapPreview.id = "mappreview-" + name;
-		mapPreview.src = "https://www.yapms.online/app/www-data/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
+		mapPreview.src = "https://" + window.location.hostname + "/app/www-data/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
 		mapPreview.alt = "No Preview";
 		mapPreview.onclick = (function() {
-			//var url = "https://www.yapms.com/app/?u=" + Account.id + '&m=' + name;
 			var url = "./?u=" + Account.id + '&m=' + name;
 			return function() {
 				window.location.href = url;
@@ -435,7 +434,7 @@ class Account {
 		/* CREATE MAP LINK */
 		var mapBoxURL = document.createElement('div');
 		mapBoxURL.className = "mysaves-url";
-		var mapURL = document.createTextNode("https://www.yapms.com/app/?u=" + Account.id + "&m=" + name);
+		var mapURL = document.createTextNode("https://" + window.location.hostname + "/app/?u=" + Account.id + "&m=" + name);
 		mapBoxURL.appendChild(mapURL);
 		mapBox.appendChild(mapBoxURL);
 
@@ -494,8 +493,7 @@ class Account {
 			console.log('dom-to-image: ', error);
 		});
 
-		//fetch('https://yapms.org/users/.tools/get_maps.php', {
-		fetch('https://www.yapms.online/app/api/users_maps/get_maps.php', {
+		fetch('https://' + window.location.hostname + '/app/api/users_maps/get_maps.php', {
 			method: 'POST',
 			credentials: 'include'
 		})
@@ -6068,7 +6066,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v3.6.3';
+const currentCache = 'v4.0.1';
 
 let states = [];
 let lands = [];
