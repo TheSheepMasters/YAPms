@@ -13,6 +13,18 @@
 			</h3>
 		</div>
 		<div class="link-list">
+		<p>November 7th 2021</p>
+		<a class="link" href="./app/?t=USA_2020_presidential">USA 2020 Presidential Results</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
+				Update
+			</h3>
+		</div>
+		<div class="link-list">
 		<p>November 4th 2021</p>
 		<a class="link" href="./app/?t=NewYork_2020_state_lower">New York 2020 State Lower</a>
 		</div>

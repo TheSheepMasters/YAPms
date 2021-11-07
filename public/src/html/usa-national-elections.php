@@ -35,18 +35,18 @@
 			</a>
 		</div>
 		<div class="navigation-3">
-			<a class="navigation-4" href="./app/?t=USA_2020_presidential">
+			<a class="navigation-4" href="./app/?t=USA_2020_presidential_blank">
 				Presidential
 			</a>
-			<a class="navigation-4" href="./app/?t=USA_2020_governors">
+			<a class="navigation-4" href="./app/?t=USA_2020_governors_blank">
 				Governors
 			</a>
 		</div>
 		<div class="navigation-3">
-			<a class="navigation-4" href="./app/?t=USA_2020_senate">
+			<a class="navigation-4" href="./app/?t=USA_2020_senate_blank">
 				Senate
 			</a>
-			<a class="navigation-4" href="./app/?t=USA_2020_house">
+			<a class="navigation-4" href="./app/?t=USA_2020_house_blank">
 				House
 			</a>
 		</div>

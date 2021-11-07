@@ -45,6 +45,9 @@
 	<i class="fas fa-user"></i>
 	<div class="selectmenu-split-text">Presidential</div>
 </a>
+<a class="selectmenu-button" href="./?t=USA_2020_presidential">
+	<div class="selectmenu-button-text">2020</div>
+</a>
 <a class="selectmenu-button" href="./?t=USA_2016_presidential">
 	<div class="selectmenu-button-text">2016</div>
 </a>

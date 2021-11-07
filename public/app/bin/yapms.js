@@ -1694,6 +1694,7 @@ class MapLoader {
 				break;
 			case "USA_current_senate":
 			case "USA_2024_projection":
+			case "USA_2020_presidential":
 			case "USA_2020_cook":
 			case "USA_2020_inside":
 			case "USA_2020_sabatos":
@@ -1934,7 +1935,7 @@ class MapLoader {
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/presidential/usa_presidential.svg", 16, 0.75, "usa_2024_ec", "takeall", "open");
 				break;
-			case "USA_2020_presidential":
+			case "USA_2020_presidential_blank":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/presidential/usa_presidential.svg", 16, 0.75, "usa_ec", "takeall", "open");
 				break;
@@ -1946,7 +1947,7 @@ class MapLoader {
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 1, "1", "senatorial", "2022");
 				break;
-			case "USA_2020_senate":
+			case "USA_2020_senate_blank":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 1, "1", "senatorial", "2020");
 				break;
@@ -1954,7 +1955,7 @@ class MapLoader {
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/governors/usa_gubernatorial.svg", 16, 0.75, "1", "gubernatorial", "2022");
 				break;
-			case "USA_2020_governors":
+			case "USA_2020_governors_blank":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/governors/usa_gubernatorial.svg", 16, 0.75, "1", "gubernatorial", "2020");
 				break;
@@ -1971,7 +1972,7 @@ class MapLoader {
 				MapLoader.loadMap("./res/usa/county/usa_county.svg", 16, 0.075, "1", "takeall_noedit", "open");
 				break;
 			case "USA_2022_house":
-			case "USA_2020_house":
+			case "USA_2020_house_blank":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableEraser: true});
 				break;
@@ -6086,7 +6087,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.0.3';
+const currentCache = 'v4.0.7';
 
 let states = [];
 let lands = [];

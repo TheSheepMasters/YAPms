@@ -7,6 +7,11 @@
 	</div>
 	<div class="navigation-2">
 		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=USA_2020_presidential">
+				2020
+			</a>
+		</div>
+		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=USA_2016_presidential">
 				2016
 			</a>

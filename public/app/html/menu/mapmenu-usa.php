@@ -35,15 +35,15 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">National 2020</div>
 </a>
-<a class="selectmenu-button" href="./?t=USA_2020_presidential">
+<a class="selectmenu-button" href="./?t=USA_2020_presidential_blank">
 	<i class="fas fa-user"></i>
 	<div class="selectmenu-button-text">Presidential</div>
 </a>
-<a class="selectmenu-button" href="./?t=USA_2020_senate">
+<a class="selectmenu-button" href="./?t=USA_2020_senate_blank">
 	<i class="fas fa-chevron-up"></i>
 	<div class="selectmenu-button-text">Senate</div>
 </a>
-<a class="selectmenu-button" href="./?t=USA_2020_governors">
+<a class="selectmenu-button" href="./?t=USA_2020_governors_blank">
 	<i class="fas fa-square"></i>
 	<div class="selectmenu-button-text">Governors</div>
 </a>
