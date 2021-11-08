@@ -3422,7 +3422,7 @@ class PresetLoader {
 
 		CandidateManager.candidates['SVP/UDC'] = svpudc ;
 		CandidateManager.candidates['FDP/PLR'] = fdpplr;
-		CandidateManager.candidates['SP/PS'] = spps;
+		CandidateManager.candidates['SDP/PSS'] = spps;
 		CandidateManager.candidates['GPS/PES'] = gpspes;
 		CandidateManager.candidates['CVP/PDC'] = cvppdc;
 		CandidateManager.candidates['GLP/PVL'] = glppvl;
@@ -6087,7 +6087,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.0.7';
+const currentCache = 'v4.0.9';
 
 let states = [];
 let lands = [];

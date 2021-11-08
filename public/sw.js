@@ -1,4 +1,4 @@
-const version = '4.0.7';
+const version = '4.0.9';
 
 const _cache = [
 	'./',

@@ -41,7 +41,7 @@ mkdir($dir);
 
 $files = glob("{$dir}/*", GLOB_BRACE);
 if($files) {
-        if(count($files) > 4) {
+        if(count($files) >= 100) {
                 echo "bad file_limit";
                 die();
         }

@@ -806,7 +806,7 @@ class PresetLoader {
 
 		CandidateManager.candidates['SVP/UDC'] = svpudc ;
 		CandidateManager.candidates['FDP/PLR'] = fdpplr;
-		CandidateManager.candidates['SP/PS'] = spps;
+		CandidateManager.candidates['SDP/PSS'] = spps;
 		CandidateManager.candidates['GPS/PES'] = gpspes;
 		CandidateManager.candidates['CVP/PDC'] = cvppdc;
 		CandidateManager.candidates['GLP/PVL'] = glppvl;
