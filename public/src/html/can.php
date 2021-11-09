@@ -12,13 +12,18 @@
 			</a>
 		</div>
 		<div class="navigation-3">
-			<a class="navigation-4" href="./app/?t=Canada_2019_house_of_commons">
-				2019 Results
+			<a class="navigation-4" href="./app/?t=Canada_provinces">
+				Provinces
 			</a>
 		</div>
 		<div class="navigation-3">
-			<a class="navigation-4" href="./app/?t=Canada_provinces">
-				Provinces
+			<a class="navigation-4" href="./app/?t=Canada_2021_house_of_commons">
+				2021 Results
+			</a>
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=Canada_2019_house_of_commons">
+				2019 Results
 			</a>
 		</div>
 	</div>

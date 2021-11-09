@@ -7,6 +7,18 @@
 	<div class="featured-section-body">
 	<div class="info-box">
 		<div class="info-box-header">
+			<img src="app/res/flags/can.svg">
+			<h3>
+				Update
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>November 8th 2021</p>
+		<a class="link" href="./app/?t=Canada_2021_house_of_commons">Canadian 2021 Federal Election Results</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
 				Update

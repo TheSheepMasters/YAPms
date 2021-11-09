@@ -86,21 +86,21 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 			<meta property="og:description" content="Interactive USA 2022 House Map">';
 			$h1title = "USA 2022 House Election";
 		break;
-		case 'USA_2020_senate':
+		case 'USA_2020_senate_blank':
 		echo '<meta name="description" content="United States interactive 2020 senate election map">
 			<title>USA - 2020 Senate Election Map</title>
 			<meta property="og:title" content="YAPms - USA 2020 Senate">
 			<meta property="og:description" content="Interactive USA 2020 Senate Map">';
 			$h1title = "USA 2020 Senate Election";
 		break;
-		case 'USA_2020_governors':
+		case 'USA_2020_governors_blank':
 		echo '<meta name="description" content="United States interactive 2020 governors election map">
 			<title>USA - 2020 Governors Election Map</title>
 			<meta property="og:title" content="YAPms - USA 2020 Governors Map">
 			<meta property="og:description" content="Interactive USA 2020 Governors Election Map">';
 			$h1title = "USA 2020 Governors Election";
 		break;
-		case 'USA_2020_house':
+		case 'USA_2020_house_blank':
 		echo '<meta name="description" content="United States interactive 2020 interactive house election map">
 			<title>USA - 2020 House Election Map</title>
 			<meta property="og:title" content="YAPms - USA 2020 House">
@@ -249,7 +249,14 @@ if (isset($_GET["t"]) && !empty($_GET["t"])) {
 			<meta property="og:title" content="YAPms - Canada House of Commons">
 			<meta property="og:description" content="Interactive Canadian House of Commons Map">';
 			$h1title = "Canadian House of Commons";
-		break;
+			break;
+		case 'Canada_2021_house_of_commons':
+		echo '<meta name="description" content="Canada - Interactive 2021 House of Commons election results map">
+			<title>Canada - 2021 House of Commons Election Results Map</title>
+			<meta property="og:title" content="YAPms - 2021 Canada House of Commons Election Results">
+			<meta property="og:description" content="Interactive 2021 Canadian House of Commons Election Results Map">';
+			$h1title = "Canadian 2021 House of Commons Results";
+			break;
 		case 'Canada_2019_house_of_commons':
 		echo '<meta name="description" content="Canada - Interactive 2019 House of Commons election results map">
 			<title>Canada - 2019 House of Commons Election Results Map</title>

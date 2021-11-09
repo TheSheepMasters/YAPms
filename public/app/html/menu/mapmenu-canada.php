@@ -24,6 +24,10 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Historical</div>
 </a>
+<a class="selectmenu-button" href="./?t=Canada_2021_house_of_commons">
+	<i class="fas fa-chevron-down"></i>
+	<div class="selectmenu-display-header-text">2021</div>
+</a>
 <a class="selectmenu-button" href="./?t=Canada_2019_house_of_commons">
 	<i class="fas fa-chevron-down"></i>
 	<div class="selectmenu-display-header-text">2019</div>

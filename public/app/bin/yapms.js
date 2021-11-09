@@ -1767,6 +1767,7 @@ class MapLoader {
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('usa/' + id);
 				break;
+			case "Canada_2021_house_of_commons":
 			case "Canada_2019_house_of_commons":
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('can/' + id);
@@ -2070,6 +2071,10 @@ class MapLoader {
 			case "UnitedKingdom_house_of_commons":
 				PresetLoader.loadPreset('uk')
 				MapLoader.loadMap("./res/ukd/unitedkingdom.svg", 16, 0.075, "1", "takeall_noedit", "open");
+				break;
+			case "UnitedKingdom_house_of_commons_proposed_2023":
+				PresetLoader.loadPreset('uk')
+				MapLoader.loadMap("./res/ukd/unitedkingdom_proposed_2023.svg", 16, 0.05, "1", "takeall_noedit", "open");
 				break;
 			case "UnitedKingdom_historic_counties":
 				PresetLoader.loadPreset('uk')
@@ -6087,7 +6092,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.0.9';
+const currentCache = 'v4.2.0';
 
 let states = [];
 let lands = [];

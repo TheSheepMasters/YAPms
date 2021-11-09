@@ -22,6 +22,9 @@
 		<a class="link" href="./app/?t=USA_2022_governors">
 			Governors
 		</a>
+		<a class="link" href="./app/?t=USA_2020_presidential">
+			2020 Results
+		</a>
 		</div>
 	</div>
 	<div class="info-box popular-2">
@@ -51,11 +54,14 @@
 		<a class="link" href="./app/?t=Canada_house_of_commons">
 			House of Commons
 		</a>
-		<a class="link" href="./app/?t=Canada_2019_house_of_commons">
-			2019 Results
-		</a>
 		<a class="link" href="./app/?t=Canada_provinces">
 			Provinces
+		</a>
+		<a class="link" href="./app/?t=Canada_2021_house_of_commons">
+			2021 Results
+		</a>
+		<a class="link" href="./app/?t=Canada_2019_house_of_commons">
+			2019 Results
 		</a>
 		</div>
 	</div>

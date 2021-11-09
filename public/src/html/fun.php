@@ -51,9 +51,6 @@
 			<a class="link" href="https://abw.blue/index_en.php" target="_blank">
 				abw.blue
 			</a>
-			<a class="link" href="https://www.americanhistoryusa.com/campaign-trail/" target="_blank">
-				The Campaign Trail
-			</a>
 			<a class="link" href="https://270soft.com/us-election-games/president-election-game-2016-infinity/" target="_blank">
 				President Infinity
 			</a>
