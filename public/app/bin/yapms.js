@@ -1780,6 +1780,14 @@ class MapLoader {
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/alaska/2020_house.svg", 16, 0.02, "1", "takeall_noedit", "open");
 				break;
+			case "Arizona_2020_state_upper":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/arizona/2020_upper.svg", 16, 0.3, "1", "takeall_noedit", "open");
+				break;
+			case "Arizona_2020_state_lower":
+				PresetLoader.loadPreset("classic");
+				MapLoader.loadMap("./res/usa/arizona/2020_lower.svg", 16, 0.3, "2", "proportional", "open");
+				break;
 			case "Arkansas_2020_state_upper":
 				PresetLoader.loadPreset("classic");
 				MapLoader.loadMap("./res/usa/arkansas/2020_upper.svg", 16, 4.5, "1", "takeall_noedit", "open");
@@ -6092,7 +6100,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.2.0';
+const currentCache = 'v4.2.2';
 
 let states = [];
 let lands = [];

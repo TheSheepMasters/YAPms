@@ -13,6 +13,9 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Upper</div>
 </a>
+<a class="selectmenu-button" href="./?t=Arizona_2020_state_upper">
+	<div class="selectmenu-button-text">Arizona 2020</div>
+</a>
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_upper">
 	<div class="selectmenu-button-text">Arkansas 2020</div>
 </a>
@@ -60,6 +63,9 @@
 </a>
 <a class="selectmenu-button" href="./?t=Alaska_2020_state_lower">
 	<div class="selectmenu-button-text">Alaska 2020</div>
+</a>
+<a class="selectmenu-button" href="./?t=Arizona_2020_state_lower">
+	<div class="selectmenu-button-text">Arizona 2020</div>
 </a>
 <a class="selectmenu-button" href="./?t=Arkansas_2020_state_lower">
 	<div class="selectmenu-button-text">Arkansas 2020</div>
