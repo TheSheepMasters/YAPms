@@ -67,11 +67,26 @@
 			<a class="navigation-4" href="./app/?t=USA_senate">
 				Senate
 			</a>
-			<a class="navigation-4" href="./app/?t=USA_governors">
-				Governors
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=USA_senate_class_1">
+				Senate Class 1
 			</a>
 		</div>
 		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=USA_senate_class_2">
+				Senate Class 2
+			</a>
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=USA_senate_class_3">
+				Senate Class 3
+			</a>
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=USA_governors">
+				Governors
+			</a>
 			<a class="navigation-4" href="./app/?t=USA_county">
 				County
 			</a>

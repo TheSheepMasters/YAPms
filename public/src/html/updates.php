@@ -9,6 +9,20 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
+				Senate Classes
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>November 30th 2021</p>
+		<a class="link" href="./app/?t=USA_senate_class_1">Senate Class 1</a>
+		<a class="link" href="./app/?t=USA_senate_class_2">Senate Class 2</a>
+		<a class="link" href="./app/?t=USA_senate_class_3">Senate Class 3</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
 				New Maps
 			</h3>
 		</div>

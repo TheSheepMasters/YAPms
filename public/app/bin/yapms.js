@@ -1997,6 +1997,18 @@ class MapLoader {
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 0.75, "1", "senatorial", "open");
 				break;
+			case "USA_senate_class_1":
+				PresetLoader.loadPreset('classic');
+				MapLoader.loadPresetMap('usa/USA_senate_class_1');
+				break;
+			case "USA_senate_class_2":
+				PresetLoader.loadPreset('classic');
+				MapLoader.loadPresetMap('usa/USA_senate_class_2');
+				break;
+			case "USA_senate_class_3":
+				PresetLoader.loadPreset('classic');
+				MapLoader.loadPresetMap('usa/USA_senate_class_3');
+				break;
 			case "USA_takeall":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/presidential/usa_no_districts.svg", 16, 0.75, "usa_no_districts_ec", "takeall", "open");
@@ -6100,7 +6112,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.2.3';
+const currentCache = 'v4.5.0';
 
 let states = [];
 let lands = [];

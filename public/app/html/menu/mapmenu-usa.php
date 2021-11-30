@@ -76,6 +76,18 @@
 	<i class="fas fa-chevron-up"></i>
 	<div class="selectmenu-button-text">Senate</div>
 </a>
+<a class="selectmenu-button" href="./?t=USA_senate_class_1">
+	<i class="fas fa-chevron-up"></i>
+	<div class="selectmenu-button-text">Senate Class 1</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_senate_class_2">
+	<i class="fas fa-chevron-up"></i>
+	<div class="selectmenu-button-text">Senate Class 2</div>
+</a>
+<a class="selectmenu-button" href="./?t=USA_senate_class_3">
+	<i class="fas fa-chevron-up"></i>
+	<div class="selectmenu-button-text">Senate Class 3</div>
+</a>
 <a class="selectmenu-button" href="./?t=USA_governors">
 	<i class="fas fa-square"></i>
 	<div class="selectmenu-button-text">Governors</div>
