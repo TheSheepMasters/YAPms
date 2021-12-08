@@ -10,7 +10,7 @@
 	<a id="installbutton" class="social install" style="display: none">
 		<i class="fas fa-home"></i> Install
 	</a>
-	<a class="social discord" href="https://discord.gg/kT9dMHY" target="_blank">
+	<a class="social discord" href="https://discord.gg/KpsJUa2mjW" target="_blank">
 		<i class="fab fa-discord"></i> Discord
 	</a>
 	<a class="social reddit" href="https://www.reddit.com/r/YAPms/" target="_blank">
@@ -19,7 +19,7 @@
 	<a class="social twitter" href="https://twitter.com/YAPmsOfficial" target="_blank">
 		<i class="fab fa-twitter"></i> Twitter
 	</a>
-	<a class="social nationstates" href="https://www.nationstates.net/region=yapmissia" target="_blank">
-		<i class="fas fa-landmark"></i> Nation States
+	<a class="social mockgov" href="https://discord.gg/HDsrw6E7tp" target="_blank">
+		<i class="fas fa-landmark"></i> Mock Gov
 	</a>
 </div>
