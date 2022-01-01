@@ -16,7 +16,7 @@
 	padding-left: 4px;
 	padding-right: 4px;
 	padding-top: 4px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #555555;
 }
 
 .selectmenu .selectmenu-button:hover {
@@ -128,84 +128,6 @@ h2.selectmenu-toptext {
 	border-bottom-left-radius: 0px;
 }
 
-.selectmenu-red {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #bf1d29, #ff5865, #ff8b98, #cf8980);
-}
-
-.selectmenu-red-light {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #ff5555, #ff8080, #ffaaaa, #ffd5d5);
-}
-
-.selectmenu-red-dark {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #80302e, #cb4b40, #fb817f, #f5c8c4);
-}
-
-.selectmenu-blue {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #1c408c, #577ccc, #8aafff, #949bb3);
-}
-
-.selectmenu-blue-light {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #5555ff, #8080ff, #aaaaff, #d5d5ff);
-}
-
-.selectmenu-blue-dark {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #302e80, #444cc5, #817ffb, #cdd3f7);
-}
-
-.selectmenu-green {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #1c8c28, #50c85e, #8aff97, #7a997e);
-}
-
-.selectmenu-yellow {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #e6b700, #e8c84d, #ffe78a, #b8a252);
-}
-
-.selectmenu-purple {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #822194, #ae20c6, #db14ff, #a369ae);
-}
-
-.selectmenu-democratic-wiki {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #002b84, #1666cb, #86b6f2, #d3e7ff);
-}
-
-.selectmenu-republican-wiki {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #800000, #d40000, #e27f90, #ffccd0);
-}
-
-.selectmenu-dixiecrat-wiki {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #aa4400, #ff6600, #ff9955, #ffccaa);
-}
-
-.selectmenu-unpledged-wiki {
-	font-weight: bold;
-	color: white;
-	background: linear-gradient(to right, #be9600, #f4c200, #ffe680, #ffeeaa);
-}
-
 #downloadbutton .selectmenu-button-part-text {
 	flex: 1 1;
 	margin: 0px;
@@ -260,11 +182,15 @@ h2.selectmenu-toptext {
     padding: 2px;
     margin-bottom: 3px;
     border-radius: 5px;
-    background: #dddddd;
+    background: #ededed;
 }
 
 .selectmenu-toptext {
     display: flex;
     flex-direction: row;
     text-align: center
+}
+
+.addcandidate-color, .editcandidate-color, .customcolor-color {
+	margin: 0.3em;
 }

@@ -796,8 +796,13 @@ class MapLoader {
 				if(candidateName === 'Tossup') {
 					continue;
 				}
-				let candidate = obj.candidates[candidateName];
-				CandidateManager.addCandidate(candidateName, candidate['solid'], candidate['likely'], candidate['lean'], candidate['tilt']);
+				if(obj.candidates[candidateName].constructor === Object) {
+					let candidate = obj.candidates[candidateName];
+					CandidateManager.addCandidate(candidateName, candidate['solid'], candidate['likely'], candidate['lean'], candidate['tilt']);
+				} else {
+					let candidateColors = obj.candidates[candidateName];
+					CandidateManager.addCandidate2(candidateName, candidateColors)
+				}
 			}
 
 			for(let stateName in obj.states) {

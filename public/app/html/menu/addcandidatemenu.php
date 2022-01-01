@@ -15,18 +15,27 @@
 <a class="selectmenu-button" onclick='displayMenu("wikicolormenu")'>
 	<div class="selectmenu-button-text">Wikipedia Colors</div>
 </a>
+<a class="selectmenu-button" onclick='displayMenu("interpolationcolormenu")'>
+	<div class="selectmenu-button-text">Interpolation Colors</div>
+</a>
 <a class="selectmenu-button" onclick='displayMenu("altcolormenu")'>
 	<div class="selectmenu-button-text">Alt Colors</div>
 </a>
 <a class="selectmenu-button" onclick='displayMenu("customcolormenu")'>
 	<div class="selectmenu-button-text">Custom Colors</div>
 </a>
-<div class="selectmenu-section">Solid <input id="solid" type="color"></div>
-<div class="selectmenu-section">Likely <input id="likely" type="color"></div>
-<div class="selectmenu-section">Leaning <input id="leaning" type="color"></div>
-<div class="selectmenu-section">Tilt <input id="tilting" type="color"></div>
-<div class="selectmenu-button" onclick="CandidateManager.addCandidate(); Simulator.uniformPreset(); closeAllPopups();">
-	<div class="selectmenu-button-text">Add</div>
+<div class="selectmenu-section" id="addcandidate-colors">
+</div>
+<div class="selectmenu-button-mult">
+	<div class="selectmenu-button-part selectmenu-button" onclick="addCandidateAddColor();">
+		<div class="selectmenu-button-text">Add<br>Color</div>
+	</div>
+	<div class="selectmenu-button-part selectmenu-button" onclick="addCandidateRemoveColor();">
+		<div class="selectmenu-button-text">Remove<br>Color</div>
+	</div>
+</div>
+<div class="selectmenu-button" onclick="CandidateManager.addCandidate3(); Simulator.uniformPreset(); closeAllPopups();">
+	<div class="selectmenu-button-text">Confirm</div>
 </div>
 </div>
 </div>

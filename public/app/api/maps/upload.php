@@ -3,21 +3,25 @@
 $config = json_decode(file_get_contents("../../../../external/config.json"), true);
 $secret = $config["recaptcha_secret"];
 $response = $_POST["captcha"];
-$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
-$isVerified = json_decode($verify);
 
-if($isVerified->success === false) {
-	echo "reCaptcha_Failed(restart_web_browser)";
-	die();
-}
+if(!in_array($_SERVER["REMOTE_ADDR"], ["127.0.0.1", "::1"])) {
+	$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
+	$isVerified = json_decode($verify);
 
-if($isVerified->score < 0.5) {
-	echo "reCaptcha_Bot_Detected";
-	die();
+	if($isVerified->success === false) {
+		echo "reCaptcha_Failed(restart_web_browser)";
+		die();
+	}
+
+	if($isVerified->score < 0.5) {
+		echo "reCaptcha_Bot_Detected";
+		die();
+	}
 }
 
 $mapnumber = 0;
 
+/*
 $sql_select = "SELECT * FROM mapcount";
 $sql_update = "UPDATE mapcount SET value = CASE WHEN (value < 1000000) THEN (value + 1) ELSE 0 END";
 $dbh = new PDO("mysql:host=localhost;dbname=yapms", "yapms");
@@ -30,6 +34,7 @@ $dbh = null;
 foreach($res_select as $row) {
 	$mapnumber = $row[0];
 }
+*/
 
 $filename = base_convert($mapnumber, 10, 36);
 

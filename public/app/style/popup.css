@@ -1,8 +1,9 @@
 .popup {
 	display: none;
 	background-color: #ffffff;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	border-radius: 10px;
+	box-shadow: 0px 0px 5px #444444;
 
 	padding: 0px;	
 	z-index: 10;

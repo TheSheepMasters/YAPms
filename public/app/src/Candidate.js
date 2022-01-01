@@ -43,13 +43,14 @@ class CandidateManager {
 	static setCandidate() {
 		closeAllPopups();
 
-		var oldname= document.getElementById('candidate-originalName').value;
-		var newname = document.getElementById('candidate-name').value;
-		var solidColor = document.getElementById('candidate-solid').value;
-		var likelyColor = document.getElementById('candidate-likely').value;
-		var leanColor = document.getElementById('candidate-lean').value;
-		var tiltColor = document.getElementById('candidate-tilt').value;
-			
+		const oldname = document.getElementById('candidate-originalName').value;
+		const newname = document.getElementById('candidate-name').value;
+		const candidate = CandidateManager.candidates[oldname];
+		const candidateColorsDom = document.getElementById("editcandidate-colors");
+		const newColors = [];
+		for(const child of candidateColorsDom.children) {
+			newColors.push(child.value);	
+		}
 		// only rename the property if the name changed
 		if(newname !== oldname) {
 			Object.defineProperty(CandidateManager.candidates, newname,
@@ -57,40 +58,22 @@ class CandidateManager {
 			delete CandidateManager.candidates[oldname];
 		}
 
-		var candidate = CandidateManager.candidates[newname];
 		candidate.name = newname;
-		candidate.colors[0] = solidColor;
-		candidate.colors[1] = likelyColor;
-		candidate.colors[2] = leanColor;
-		candidate.colors[3] = tiltColor;
+		candidate.colors = newColors;
 		
-		if(solidColor === likelyColor &&
-			solidColor === leanColor &&
-			solidColor === tiltColor) {
-			candidate.singleColor = true;
-			candidate.probVoteCounts[0] += 
-				candidate.probVoteCounts[1] +
-				candidate.probVoteCounts[2] +
-				candidate.probVoteCounts[3];
-			candidate.probVoteCounts[1] = 0;
-			candidate.probVoteCounts[2] = 0;
-			candidate.probVoteCounts[3] = 0;
-		} else {
-			candidate.singleColor = false;
-		}
-		
-		for(var index = 0; index < states.length; ++index) {
-			var state = states[index];
+		for(let index = 0; index < states.length; ++index) {
+			const state = states[index];
 			if(state.candidate === newname) {
 				state.setColor(newname, state.colorValue, {setDelegates: false});
-				console.log(state.colorValue);
 			} else if(state.candidate === oldname) {
 				state.setColor(newname, state.colorValue, {setDelegates: false});
-			
 				state.delegates[newname] = state.delegates[oldname];
 				state.delegates[oldname] = undefined;
+			}
 
-			}	
+			if(state.colorValue > candidate.colors.length) {
+				state.setColor(newname, 0, {setDelegates: false});
+			}
 		}
 
 		LegendManager.generateLegend();
@@ -98,8 +81,47 @@ class CandidateManager {
 		ChartManager.updateChart();
 	}
 
-	static addCandidate(name, solid, likely, leaning, tilting) {
+	static addCandidate3() {
+		const name = document.getElementById("name").value;
+		const colors = [];
+		const colorsDom = document.getElementById("addcandidate-colors").children;
+		for(const colorDom of colorsDom) {
+			colors.push(colorDom.value);
+		}
+		const candidate = new Candidate(name, colors);
+		CandidateManager.candidates[name] = candidate;
+		verifyPaintIndex();
+		LegendManager.generateLegend();
+		ChartManager.updateChart();
+		LegendManager.updateLegend();
+	}
 
+	static addCandidate2(name, colors) {
+
+		if(name === undefined) {
+			const nameHTML = document.getElementById('name');
+			if(nameHTML !== null) {
+				name = nameHTML.value;
+			} else {
+				name = "Error";
+			}
+		}
+
+		// ignore white space candidates
+		if(name.trim() === '') {
+			return;
+		}
+
+		const candidate = new Candidate(name, colors);
+		CandidateManager.candidates[name] = candidate;
+
+		verifyPaintIndex();
+		LegendManager.generateLegend();
+		ChartManager.updateChart();
+		LegendManager.updateLegend();
+	}
+
+	static addCandidate(name, solid, likely, leaning, tilting) {
 		if(name === undefined) {
 			const nameHTML = document.getElementById('name');
 			if(nameHTML !== null) {
@@ -161,15 +183,13 @@ class CandidateManager {
 	
 	static saveCustomColors() {
 		const name = document.getElementById('custom-color-name').value;
-		const solid = document.getElementById("solidcustom").value;
-		CookieManager.appendCookie(name + "solid", solid);	
-		const likely = document.getElementById("likelycustom").value;
-		CookieManager.appendCookie(name + "likely", likely);	
-		const leaning = document.getElementById("leaningcustom").value;
-		CookieManager.appendCookie(name + "leaning", leaning);	
-		const tilting = document.getElementById("tiltingcustom").value;
-		CookieManager.appendCookie(name + "tilting", tilting);
-		CandidateManager.setColors(name);
+
+		const element = document.getElementById("customcolor-colors");
+		for(let index = 0; index < element.children.length; index += 1) {
+			console.log(index);
+			const child = element.children[index];
+			CookieManager.appendCookie(name + "-" + index, child.value);
+		}
 	}
 
 	static setColors(palette) {
@@ -178,76 +198,221 @@ class CandidateManager {
 		const leaning =  document.getElementById('leaning');
 		const tilting = document.getElementById('tilting');
 
-		if(palette === 'red') {
-			solid.value = '#bf1d29';
-			likely.value = '#ff5865';
-			leaning.value = '#ff8b98';
-			tilting.value ='#cf8980';
-		} else if(palette === 'blue') {
-			solid.value = '#1c408c';
-			likely.value = '#577ccc';
-			leaning.value = '#8aafff';
-			tilting.value = '#949bb3';
-		} else if(palette === 'green') {
-			solid.value = '#1c8c28';
-			likely.value = '#50c85e';
-			leaning.value = '#8aff97';
-			tilting.value = '#7a997e';
-		} else if(palette === 'yellow') {
-			solid.value = '#e6b700';
-			likely.value = '#e8c84d';
-			leaning.value = '#ffe78a';
-			tilting.value = '#b8a252';
-		} else if(palette === 'blue-light') {
-			solid.value = '#5555ff';
-			likely.value = '#8080ff';
-			leaning.value = '#aaaaff';
-			tilting.value = '#d5d5ff';
-		} else if(palette === 'red-light') {
-			solid.value = '#ff5555';
-			likely.value = '#ff8080';
-			leaning.value = '#ffaaaa';
-			tilting.value = '#ffd5d5';
-		} else if(palette === 'blue-dark') {
-			solid.value = '#302e80';
-			likely.value = '#444cc5';
-			leaning.value = '#817ffb';
-			tilting.value = '#cdd3f7';
-		} else if(palette === 'red-dark') {
-			solid.value = '#80302e';
-			likely.value = '#cb4b40';
-			leaning.value = '#fb817f';
-			tilting.value = '#f5c8c4';
-		} else if(palette === 'purple') {
-			solid.value = '#822194';
-			likely.value = '#ae20c6';
-			leaning.value = '#db14ff';
-			tilting.value = '#a369ae';
-		} else if(palette === 'democratic-wiki') {
-			solid.value = '#002b84';
-			likely.value = '#1666cb';
-			leaning.value = '#86b6f2';
-			tilting.value = '#d3e7ff';
-		} else if(palette === 'republican-wiki') {
-			solid.value = '#800000';
-			likely.value = '#d40000';
-			leaning.value = '#e27f90';
-			tilting.value = '#ffccd0';
-		} else if(palette === 'dixiecrat-wiki') {
-			solid.value = '#aa4400';
-			likely.value = '#ff6600';
-			leaning.value = '#ff9955';
-			tilting.value = '#ffccaa';
-		} else if(palette === 'unpledged-wiki') {
-			solid.value = '#be9600';
-			likely.value = '#f4c200';
-			leaning.value = '#ffe680';
-			tilting.value = '#ffeeaa';
-		} else {
-			solid.value = CookieManager.cookies[palette + 'solid'];
-			likely.value = CookieManager.cookies[palette + 'likely'];
-			leaning.value = CookieManager.cookies[palette + 'leaning'];
-			tilting.value = CookieManager.cookies[palette + 'tilting'];
+		let colors = null;
+		switch(palette) {
+			case "red":
+			colors = [
+				"#bf1d29",
+				"#ff5865",
+				"#ff8b98",
+				"#cf8980"
+			]
+			break;
+			case "blue":
+			colors = [
+				"#1c408c",
+				"#577ccc",
+				"#8aafff",
+				"#949bb3"
+			]
+			break;
+			case "green":
+			colors = [
+				"#1c8c28",
+				"#50c85e",
+				"#8aff97",
+				"#7a997e"
+			]
+			break;
+			case "yellow":
+			colors = [
+				"#e6b700",
+				"#e8c84d",
+				"#ffe78a",
+				"#b8a252"
+			]
+			break;
+			case "blue-light":
+			colors = [
+				"#5555ff",
+				"#8080ff",
+				"#aaaaff",
+				"#d5d5ff"
+			]
+			break;
+			case "red-light":
+			colors = [
+				"#ff5555",
+				"#ff8080",
+				"#ffaaaa",
+				"#ffd5d5"
+			]
+			break;
+			case "blue-dark":
+			colors = [
+				"#302e80",
+				"#444cc5",
+				"#817ffb",
+				"#cdd3f7"
+			]
+			break;
+			case "red-dark":
+			colors = [
+				"#80302e",
+				"#cb4b40",
+				"#fb817f",
+				"#f5c8c4"
+			]
+			break;
+			case "purple":
+			colors =[
+				"#822194",
+				"#ae20c6",
+				"#db14ff",
+				"#a369ae"
+			]
+			break;
+			case "blue1-interpolation":
+			colors = [
+				"#0d0596",
+				"#2b26a5",
+				"#4948b4",
+				"#6769c3",
+				"#858ad2",
+				"#a3abe1",
+				"#c1cdf0",
+				"#dfeeff"
+			]
+			break;
+			case "blue2-interpolation":
+			colors = [
+				"#002b84",
+				"#234a99",
+				"#466aad",
+				"#6a89c2",
+				"#8da8d6",
+				"#b0c8eb",
+				"#d3e7ff"
+			]
+			break;
+			case "red1-interpolation":
+			colors = [
+				"#a80000",
+				"#b42021",
+				"#c14043",
+				"#cd6064",
+				"#da8086",
+				"#e6a0a7",
+				"#f3c0c9",
+				"#ffe0ea"
+			]
+			break;
+			case "red2-interpolation":
+			colors = [
+				"#800000",
+				"#952223",
+				"#aa4445",
+				"#c06668",
+				"#d5888b",
+				"#eaaaad",
+				"#ffccd0"
+			]
+			break;
+			case "democratic1-wiki":
+			colors = [
+				"#0d0596",
+				"#3933e5",
+				"#584cde",
+				"#6674de",
+				"#7996e2",
+				"#a5b0ff",
+				"#bdd3ff",
+				"#dfeeff"
+			]
+			break;
+			case "democratic2-wiki":
+			colors = [
+				"#002b84",
+				"#0645b4",
+				"#1666cb",
+				"#4389e3",
+				"#86b6f2",
+				"#b9d7ff",
+				"#d3e7ff"
+			]
+			break;
+			case "republican1-wiki":
+			colors = [
+				"#a80000",
+				"#c21b18",
+				"#d72f30",
+				"#d75d5d",
+				"#e27f7f",
+				"#ffb2b2",
+				"#ffc8cd",
+				"#ffe0ea"
+			]
+			break;
+			case "republican2-wiki":
+			colors = [
+				"#800000",
+				"#aa0000",
+				"#d40000",
+				"#cc2f4a",
+				"#e27f90",
+				"#f2b3be",
+				"#ffccd0"
+			]
+			break;
+			case "dixiecrat-wiki":
+			colors = [
+				"#aa4400",
+				"#d45500",
+				"#ff6600",
+				"#ff7f2a",
+				"#ff9955",
+				"#ffb380",
+				"#ffccaa"
+			]
+			break;
+			case "unpledged-wiki":
+			colors = [
+				"#be9600",
+				"#daae00",
+				"#f4c200",
+				"#ffdc43",
+				"#ffe680",
+				"#ffeeaa"
+			]
+			break;
+			default:
+				/*
+			colors = [
+				CookieManager.cookies[palette + "solid"],
+				CookieManager.cookies[palette + "likely"],
+				CookieManager.cookies[palette + "leaning"],
+				CookieManager.cookies[palette + "tilting"]
+			]
+			*/
+			colors = [];
+			let number = 0;
+			while(CookieManager.cookies[palette + "-" + number]) {
+				colors.push(CookieManager.cookies[palette + "-" + number]);
+				number += 1;
+			}
+			break;
+		}
+
+		const colorsDom = document.getElementById("addcandidate-colors");
+		while(colorsDom.firstChild) {
+			colorsDom.removeChild(colorsDom.firstChild);
+		}
+		for(const color of colors) {
+			const colorDom = document.createElement("input");
+			colorDom.classList.add("addcandidate-color");
+			colorDom.value = color;
+			colorDom.type = "color";
+			colorsDom.appendChild(colorDom);
 		}
 	}
 }

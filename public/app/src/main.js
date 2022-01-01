@@ -1,4 +1,4 @@
-const currentCache = 'v4.5.1';
+const currentCache = 'v4.6.0';
 
 let states = [];
 let lands = [];
@@ -6,11 +6,8 @@ let buttons = [];
 let proportionalStates = [];
 
 let paintIndex = 'Tossup';
-let maxColorValue = 2;
 
 let mode = 'paint';
-
-let maxColorValues = 4;
 
 let mapOptions = {}
 
@@ -161,7 +158,11 @@ function countVotes() {
 			if(state.candidate === "Tossup" && key !== "Tossup") {
 				candidate.probVoteCounts[0] += state.delegates[key];
 			} else {
-				candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+				if(candidate.probVoteCounts[state.colorValue]) {
+					candidate.probVoteCounts[state.colorValue] += state.delegates[key];
+				} else {
+					candidate.probVoteCounts[state.colorValue] = state.delegates[key];
+				}
 			}
 		}
 

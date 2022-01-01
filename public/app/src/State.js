@@ -293,6 +293,8 @@ class State {
 		else {
 			this.colorValue += 1;
 		}
+
+		console.log(this.colorValue);
 	
 		if(options.setDelegates) {
 			this.delegates = {};
@@ -309,8 +311,7 @@ class State {
 
 		} else {
 			// if the candidate is anything else...
-			//if(this.colorValue >= maxColorValue + 1) {
-			if(this.colorValue >= maxColorValues) {
+			if(this.colorValue >= CandidateManager.candidates[candidate].colors.length) {
 				this.colorValue = 0;
 			}
 

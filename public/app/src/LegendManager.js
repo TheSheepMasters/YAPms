@@ -115,11 +115,21 @@ class LegendManager {
 			}
 
 			if(key !== 'Tossup' && LegendManager.legendLeans) {
+				/*
 				const amts = ['solid', 'likely', 'lean', 'tilt'];
 				for(let index = 0; index < amts.length; ++index) {
 					const legendColor = document.createElement('div');
 					legendColor.classList.add('legend-color');
 					legendColor.setAttribute('id', candidate.name + amts[index]);
+					legendColor.style.backgroundColor = candidate.colors[index];
+					legendColorDiv.appendChild(legendColor);
+				}
+				*/
+
+				for(let index = 0; index < candidate.colors.length; ++index) {
+					const legendColor = document.createElement('div');
+					legendColor.classList.add('legend-color');
+					legendColor.setAttribute('id', candidate.name + index);
 					legendColor.style.backgroundColor = candidate.colors[index];
 					legendColorDiv.appendChild(legendColor);
 				}

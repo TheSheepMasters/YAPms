@@ -1,0 +1,13 @@
+{
+	"ignorePatterns": [
+
+	],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"rules": {
+		"semi": "error",
+		"prefer-const": "error"
+	}
+}

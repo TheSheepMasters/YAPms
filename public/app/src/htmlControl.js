@@ -22,19 +22,21 @@ function displayCandidateEditMenu(candidate) {
 	LogoManager.loadFlags();
 	LogoManager.loadButtons();
 	closeAllPopups();
-
 	var candidateedit = document.getElementById('candidateedit');
 	candidateedit.style.display = 'flex';
 	var nameinput = document.getElementById('candidate-name');
 	nameinput.value = candidate;
-	var solidinput = document.getElementById('candidate-solid');
-	solidinput.value = CandidateManager.candidates[candidate].colors[0];
-	var likelyinput = document.getElementById('candidate-likely');
-	likelyinput.value = CandidateManager.candidates[candidate].colors[1];
-	var leaninput = document.getElementById('candidate-lean');
-	leaninput.value = CandidateManager.candidates[candidate].colors[2];
-	var tiltinput = document.getElementById('candidate-tilt');
-	tiltinput.value = CandidateManager.candidates[candidate].colors[3];
+	const colors = document.getElementById("editcandidate-colors");
+	while(colors.firstChild) {
+		colors.removeChild(colors.firstChild);
+	}
+	for(const color of CandidateManager.candidates[candidate].colors) {
+		const colorElement = document.createElement("input");
+		colorElement.classList.add("editcandidate-color");
+		colorElement.type = "color";
+		colorElement.value = color;
+		colors.appendChild(colorElement);
+	}
 	var hiddeninput = document.getElementById('candidate-originalName');
 	var message = document.getElementById('candidateedit-message');
 	message.innerHTML = 'Edit ' + candidate;
@@ -57,11 +59,73 @@ function displayNotification(title, text) {
 	titleHTML.innerHTML = title;
 }
 
+function customColorAddColor() {
+	const input = document.createElement("input");
+	input.classList.add("customcolor-color");
+	input.type = "color";
+	document.getElementById("customcolor-colors").appendChild(input);
+}
+
+function customColorAddColor(color) {
+	const input = document.createElement("input");
+	input.classList.add("customcolor-color");
+	input.type = "color";
+	input.value = color;
+	document.getElementById("customcolor-colors").appendChild(input);
+}
+
+function customColorRemoveColor() {
+	const element = document.getElementById("customcolor-colors");
+	element.removeChild(element.lastChild);
+}
+
+function customColorRemoveAllColors() {
+	const element = document.getElementById("customcolor-colors");
+	while(element.firstChild) {
+		element.removeChild(element.lastChild);
+	}
+}
+
+function editCandidateAddColor() {
+	const input = document.createElement("input");
+	input.classList.add("editcandidate-color");
+	input.type = "color";
+	document.getElementById("editcandidate-colors").appendChild(input);
+}
+
+function editCandidateRemoveColor() {
+	const element = document.getElementById("editcandidate-colors");
+	element.removeChild(element.lastChild);
+}
+
+function addCandidateAddColor() {
+	const input = document.createElement("input");
+	input.classList.add("addcandidate-color");
+	input.type = "color";
+	document.getElementById("addcandidate-colors").appendChild(input);
+}
+
+function addCandidateRemoveColor() {
+	const element = document.getElementById("addcandidate-colors");
+	element.removeChild(element.lastChild);
+}
+
+function addCandidateRemoveAllColors() {
+	const element = document.getElementById("addcandidate-colors");
+	while(element.firstChild) {
+		element.removeChild(element.lastChild);
+	}
+}
+
 function displayAddCandidateMenu(type) {
 	LogoManager.loadFlags();
 	LogoManager.loadButtons();
 	closeAllPopups();
 	CookieManager.loadCustomColors();
+	addCandidateRemoveAllColors();
+	for(let index = 0; index < 4; index += 1) {
+		addCandidateAddColor();
+	}
 	var addcandidatemenu = document.getElementById('addcandidatemenu');
 	addcandidatemenu.style.display = 'flex';
 }
@@ -87,10 +151,18 @@ function displayCustomColorEditor(type) {
 	customColorName.value = type;
 	var miscmenu = document.getElementById('customcoloreditor');
 	miscmenu.style.display = 'flex';
-	document.getElementById("solidcustom").value = CookieManager.cookies[type + 'solid'];
-	document.getElementById("likelycustom").value = CookieManager.cookies[type + 'likely'];
-	document.getElementById("leaningcustom").value = CookieManager.cookies[type + 'leaning'];
-	document.getElementById("tiltingcustom").value = CookieManager.cookies[type + 'tilting'];
+	customColorRemoveAllColors();
+	if(CookieManager.cookies[type + "-" + 0]) {
+		let index = 0;
+		while(CookieManager.cookies[type + "-" + index]) {
+			customColorAddColor(CookieManager.cookies[type + "-" + index]);
+			index += 1;
+		}
+	} else {
+		for(let index = 0; index < 4; index += 1) {
+			customColorAddColor();
+		}
+	}
 }
 
 function setPalette(palette, setCookie) {
