@@ -1232,7 +1232,7 @@ class ChartManager {
 	static updateChart() {
 		if(ChartManager.chartType === 'verticalbattle' ||
 			ChartManager.chartType === 'horizontalbattle') {
-			ChartManager.updateBattleChart();
+			ChartManager.updateBattleChart2();
 			return;
 		} else if(ChartManager.chartType === 'horizontalBar') {
 			ChartManager.updateBarChart();
@@ -1310,7 +1310,6 @@ class ChartManager {
 			} else if(ChartManager.chartLeans) {
 				for(let probIndex = 0; probIndex < 8; ++probIndex) {
 					const count = candidate.probVoteCounts[probIndex];
-					console.log(candidate.probVoteCounts);
 					color = candidate.colors[probIndex];
 					const index = (probIndex + (candidateIndex * 8)) - 7;
 					ChartManager.chartData.labels[index] = name;
@@ -1323,6 +1322,86 @@ class ChartManager {
 				ChartManager.chartData.labels[candidateIndex] = name;
 				ChartManager.chartData.datasets[0].data[candidateIndex] = count;
 				ChartManager.chartData.datasets[0].backgroundColor.push(color);
+			}
+		}
+	}
+
+	static updateBattleChart2() {
+		if(Object.keys(CandidateManager.candidates).length > 3) {
+			if(mobile) {
+				ChartManager.setChart('pie', 'bottom');
+			} else {
+				ChartManager.setChart('pie');
+			}
+
+			return;
+		}
+
+		let candidateIndex = -1;
+		for(const candidateKey in CandidateManager.candidates) {
+			candidateIndex += 1;
+			const candidate = CandidateManager.candidates[candidateKey];
+
+			if(candidateKey === "Tossup") {
+				const tossup = document.getElementById('bar-0');
+				tossup.style.background = candidate.colors[2];
+				tossup.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
+				if(ChartManager.chartLabels) {
+					tossup.innerHTML = '<p>' + candidate.voteCount + '</p>';
+				} else {
+					tossup.innerHTML = '<p></p>';
+				}
+				continue;
+			}
+
+			const bar = document.getElementById("bar-" + candidateIndex);
+			bar.style.flexBasis = "" + (candidate.voteCount / totalVotes) * 100 + "%";
+			/*topbar.style.flexBasis = '' + 
+				(candidate.voteCount / totalVotes) * 100 + '%';
+				*/
+			if(ChartManager.chartLeans) {
+				for(const index in candidate.colors) {
+					let part = document.getElementById(candidateIndex + "-" + index);
+					console.log(part);
+					if(part === null) {
+						part = document.createElement("div");
+						part.classList.add("bar-part");
+						part.id = candidateIndex + "-" + index;
+						switch(candidateIndex) {
+							case 1:
+							bar.appendChild(part);
+								break;
+							case 2:
+							bar.insertBefore(part, bar.firstChild);
+								break;
+						}
+					}
+					part.style.flexBasis = "" + ((candidate.probVoteCounts[index] || 0) / candidate.voteCount) * 100 + "%";
+					part.style.background = candidate.colors[index];
+					if(ChartManager.chartLabels) { 
+						part.innerHTML = "<p>" + (candidate.probVoteCounts[index] || 0) + "</p>";
+					} else {
+						part.innerHTML = "<p></p>";
+					}
+				}
+			} else {
+				for(const index in candidate.colors) {
+					const part = document.getElementById(candidateIndex + "-" + index);
+					if(part) {
+						if(index === 0) {
+							part.style.flexBasis = "100%";
+							part.style.background = candidate.colors[index];
+						}  else {
+							part.style.flexBasis = "0%";
+							part.style.background = candidate.colors[index];
+						}
+						if(ChartManager.chartLabels) { 
+							part.innerHTML = "<p>" + candidate.probVoteCounts.reduce((a,b) => a + b, 0) + "</p>";
+						} else {
+							part.innerHTML = "<p></p>";
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1509,7 +1588,7 @@ class ChartManager {
 	static toggleChartLeans() {
 		ChartManager.chartLeans = !ChartManager.chartLeans;
 		ChartManager.rebuildChart();
-		ChartManager.updateBattleChart();
+		ChartManager.updateBattleChart2();
 	}
 }
 
@@ -5559,13 +5638,13 @@ function setBattleHorizontal() {
 	battlechartleft.style.height = '20px';
 	battlechartleft.style.width = '20px';
 
-	var topbar = document.getElementById('topbar');
+	var topbar = document.getElementById('bar-1');
 	topbar.style.borderRight = topbar.style.borderBottom;
 	topbar.style.borderBottom = '';
 	topbar.style.flexDirection = 'row';
 	topbar.style.minWidth = '0';
 
-	var bottombar = document.getElementById('bottombar');
+	var bottombar = document.getElementById('bar-2');
 	//bottombar.style.boxShadow = '-1px 0px 3px black';
 	bottombar.style.borderLeft = bottombar.style.borderTop;	
 	bottombar.style.borderTop = '';
@@ -5611,14 +5690,14 @@ function unsetBattleHorizontal() {
 	battlechartleft.style.height = '20px';
 	battlechartleft.style.width = '20px';
 	
-	var topbar = document.getElementById('topbar');
+	var topbar = document.getElementById('bar-1');
 	//topbar.style.boxShadow = '0px -1px 3px black';
 	topbar.style.borderBottom = topbar.style.borderRight;
 	topbar.style.borderRight = '';
 	topbar.style.flexDirection = 'column';
 	topbar.style.minWidth = '0';
 
-	var bottombar = document.getElementById('bottombar');
+	var bottombar = document.getElementById('bar-2');
 	//bottombar.style.boxShadow = '0px 1px 3px black';
 	bottombar.style.borderTop = bottombar.style.borderLeft;
 	bottombar.style.borderLeft = '';
@@ -6385,7 +6464,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.6.0';
+const currentCache = 'v4.6.1';
 
 let states = [];
 let lands = [];

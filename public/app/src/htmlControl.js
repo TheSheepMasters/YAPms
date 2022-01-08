@@ -705,13 +705,13 @@ function setBattleHorizontal() {
 	battlechartleft.style.height = '20px';
 	battlechartleft.style.width = '20px';
 
-	var topbar = document.getElementById('topbar');
+	var topbar = document.getElementById('bar-1');
 	topbar.style.borderRight = topbar.style.borderBottom;
 	topbar.style.borderBottom = '';
 	topbar.style.flexDirection = 'row';
 	topbar.style.minWidth = '0';
 
-	var bottombar = document.getElementById('bottombar');
+	var bottombar = document.getElementById('bar-2');
 	//bottombar.style.boxShadow = '-1px 0px 3px black';
 	bottombar.style.borderLeft = bottombar.style.borderTop;	
 	bottombar.style.borderTop = '';
@@ -757,14 +757,14 @@ function unsetBattleHorizontal() {
 	battlechartleft.style.height = '20px';
 	battlechartleft.style.width = '20px';
 	
-	var topbar = document.getElementById('topbar');
+	var topbar = document.getElementById('bar-1');
 	//topbar.style.boxShadow = '0px -1px 3px black';
 	topbar.style.borderBottom = topbar.style.borderRight;
 	topbar.style.borderRight = '';
 	topbar.style.flexDirection = 'column';
 	topbar.style.minWidth = '0';
 
-	var bottombar = document.getElementById('bottombar');
+	var bottombar = document.getElementById('bar-2');
 	//bottombar.style.boxShadow = '0px 1px 3px black';
 	bottombar.style.borderTop = bottombar.style.borderLeft;
 	bottombar.style.borderLeft = '';

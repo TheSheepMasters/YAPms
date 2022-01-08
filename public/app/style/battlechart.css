@@ -29,7 +29,7 @@
 	display: flex;
 }
 
-#topbar {
+#bar-1 {
 	flex-direction: column;
 	flex: 1 1;
 	flex-basis: 0%;
@@ -39,7 +39,7 @@
 	min-height: 0px;
 }
 
-#tossupbar {
+#bar-0 {
 	flex: 1 1;
 	flex-basis: 0%;
 	background: #bbb7b2;
@@ -47,7 +47,7 @@
 	overflow: hidden;
 }
 
-#bottombar {
+#bar-2 {
 	display: flex;
 	flex-direction: column;
 	flex: 1 1;
