@@ -26,7 +26,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
 			echo "good {$_SESSION["email"]} {$userID_36}";
 		} else {
 			session_destroy();
-			echo "bad incorrect_login {$email} {$password} {$hashPassword}";
+			echo "bad incorrect_login {$email}" //{$password} {$hashPassword}";
 		}
 	} else {
 		session_destroy();
