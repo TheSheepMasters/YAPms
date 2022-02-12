@@ -186,7 +186,6 @@ class CandidateManager {
 
 		const element = document.getElementById("customcolor-colors");
 		for(let index = 0; index < element.children.length; index += 1) {
-			console.log(index);
 			const child = element.children[index];
 			CookieManager.appendCookie(name + "-" + index, child.value);
 		}

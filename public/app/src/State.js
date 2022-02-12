@@ -420,7 +420,6 @@ class State {
 	}
 	
 	test_setColor(options) {
-		console.log("TEST SET COLOR");
 		var svg = document.getElementById("svgdata").firstChild;
 
 		var defs = svg.querySelector("#defs");
@@ -464,7 +463,6 @@ class State {
 				continue;
 			}
 			var color = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-			console.log(colorName);
 			color.setAttribute("class", candidateName);
 			color.setAttribute("fill", colorName);
 			color.setAttribute("width", (30* (candidateDelegates / this.voteCount)).toString());
