@@ -14,15 +14,6 @@ class CookieManager {
 	}
 
 	static loadCookies() {
-		// preload all color cookies with black
-		/*
-		for(var i = 1; i < 11; ++i) {
-			CookieManager.cookies['custom' + i + 'solid'] = '#000000';
-			CookieManager.cookies['custom' + i + 'likely'] = '#000000';
-			CookieManager.cookies['custom' + i + 'leaning'] = '#000000';
-			CookieManager.cookies['custom' + i + 'tilting'] = '#000000';
-		}
-		*/
 		CookieManager.cookies['theme'] = 'default';
 		const decode = decodeURIComponent(document.cookie);
 		const loadedCookies = decode.split('; ');
@@ -38,32 +29,19 @@ class CookieManager {
 		for(let buttonIndex = 1; buttonIndex <= 10; buttonIndex += 1) {
 			let button = document.getElementById("custom" + buttonIndex + "button");
 			if(CookieManager.cookies["custom" + buttonIndex + "-0"]) {
-				//button.style.background = "#ff0000";
 				let style = "linear-gradient(to right,";
 				let colorIndex = 0;
 				while(CookieManager.cookies["custom" + buttonIndex + "-" + colorIndex]) {
-					console.log(colorIndex);
 					style += " " + CookieManager.cookies["custom" + buttonIndex + "-" + colorIndex] + ",";
 					colorIndex += 1;
 				}
 				style = style.slice(0, -1);
 				style += ")";
 				button.style.background = "green";
-				console.log(style);
 				button.style.background = style;
-				console.log(button.style.background);
-				console.log(style);
 			} else {
 				button.style.background = "#000000";
 			}
-			/*
-			button.style.background = 'linear-gradient(to right,';
-			while(CookieManager.cookies['custom' + index  + "-" + ]
-				CookieManager.cookies['custom' + index + 'solid'] + ',' +
-				CookieManager.cookies['custom' + index + 'likely'] + ',' +
-				CookieManager.cookies['custom' + index + 'leaning'] + ',' +
-				CookieManager.cookies['custom' + index + 'tilting'] + ')';
-				*/
 		}
 	}
 

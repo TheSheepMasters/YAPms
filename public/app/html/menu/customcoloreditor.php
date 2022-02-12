@@ -24,6 +24,6 @@
 		<div class="selectmenu-button-text">Remove<br>Color</div>
 	</a>
 </div>
-<div class="selectmenu-section" onclick="CandidateManager.saveCustomColors(); displayAddCandidateMenu()">Set</div>
+<div class="selectmenu-section" onclick="CandidateManager.saveCustomColors(); CookieManager.loadCustomColors(); displayMenu('customcolormenu');">Set</div>
 </div>
 </div>

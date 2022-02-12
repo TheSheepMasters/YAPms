@@ -6,6 +6,10 @@ class KeyboardManager {
 	static areaSelect() {
 		return KeyboardManager.keyStates[68] === true;
 	}
+
+	static ctrlPressed() {
+		return KeyboardManager.keyStates[17] === true;
+	}
 }
 
 KeyboardManager.keyStates = {};

@@ -30,10 +30,13 @@
 		<h3>Shortcuts</h3>
 		<ul>
 			<li>
-				F - Hold down to quickly fill in districts
+				F - hold down to quickly fill in districts
 			</li>
 			<li id="county-house-d" style="display: none">
-				D - Hold down to fill/disable entire states
+				D - hold down to fill/disable entire states
+			</li>
+			<li>
+				CTRL - hold down to decrement the color
 			</li>
 		</ul>
 	</div>

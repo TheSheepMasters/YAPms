@@ -291,7 +291,11 @@ class State {
 		}
 		// otherwise increment
 		else {
-			this.colorValue += 1;
+			if(KeyboardManager.ctrlPressed()) {
+				this.colorValue -= 1;
+			} else {
+				this.colorValue += 1;
+			}
 		}
 
 		if(options.setDelegates) {
@@ -311,6 +315,8 @@ class State {
 			// if the candidate is anything else...
 			if(this.colorValue >= CandidateManager.candidates[candidate].colors.length) {
 				this.colorValue = 0;
+			} else if(this.colorValue < 0) {
+				this.colorValue = CandidateManager.candidates[candidate].colors.length - 1;
 			}
 
 			if(CandidateManager.candidates[candidate].singleColor) {
