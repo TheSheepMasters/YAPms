@@ -21,7 +21,6 @@ if(!in_array($_SERVER["REMOTE_ADDR"], ["127.0.0.1", "::1"])) {
 
 $mapnumber = 0;
 
-/*
 $sql_select = "SELECT * FROM mapcount";
 $sql_update = "UPDATE mapcount SET value = CASE WHEN (value < 1000000) THEN (value + 1) ELSE 0 END";
 $dbh = new PDO("mysql:host=localhost;dbname=yapms", "yapms");
@@ -34,7 +33,6 @@ $dbh = null;
 foreach($res_select as $row) {
 	$mapnumber = $row[0];
 }
-*/
 
 $filename = base_convert($mapnumber, 10, 36);
 
