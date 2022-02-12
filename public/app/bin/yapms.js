@@ -4130,8 +4130,6 @@ class State {
 			this.colorValue += 1;
 		}
 
-		console.log(this.colorValue);
-	
 		if(options.setDelegates) {
 			this.delegates = {};
 			this.delegates['Tossup'] = 0;
@@ -6306,7 +6304,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.6.5';
+const currentCache = 'v5.0.0';
 
 let states = [];
 let lands = [];

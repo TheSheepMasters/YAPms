@@ -294,8 +294,6 @@ class State {
 			this.colorValue += 1;
 		}
 
-		console.log(this.colorValue);
-	
 		if(options.setDelegates) {
 			this.delegates = {};
 			this.delegates['Tossup'] = 0;
