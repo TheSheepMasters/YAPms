@@ -434,7 +434,6 @@ class ChartManager {
 					const part = document.getElementById(candidateIndex + "-" + index);
 					if(part) {
 						if(index === "0") {
-							alert("testing");
 							part.style.flexBasis = "100%";
 							part.style.background = candidate.colors[0];
 							if(ChartManager.chartLabels) { 
