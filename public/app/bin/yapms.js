@@ -1232,7 +1232,7 @@ class ChartManager {
 	static updateChart() {
 		if(ChartManager.chartType === 'verticalbattle' ||
 			ChartManager.chartType === 'horizontalbattle') {
-			ChartManager.updateBattleChart2();
+			ChartManager.updateBattleChart();
 			return;
 		} else if(ChartManager.chartType === 'horizontalBar') {
 			ChartManager.updateBarChart();
@@ -1246,24 +1246,29 @@ class ChartManager {
 
 	static updateBarChart() {
 		ChartManager.chartData.labels = [];
-		ChartManager.chartData.datasets[0].data = [];
-		ChartManager.chartData.datasets[0].backgroundColor = [];
-		ChartManager.chartData.datasets[1].data = [];
-		ChartManager.chartData.datasets[1].backgroundColor = [];
-		ChartManager.chartData.datasets[2].data = [];
-		ChartManager.chartData.datasets[2].backgroundColor = [];
-		ChartManager.chartData.datasets[3].data = [];
-		ChartManager.chartData.datasets[3].backgroundColor = [];
-		
-		// each label is a candidate
-		for(var key in CandidateManager.candidates) {
+		ChartManager.chartData.datasets = [];
+
+		for(let key in CandidateManager.candidates) {
 			ChartManager.chartData.labels.push(key);
 		}
 
 		if(ChartManager.chartLeans) {
-			for(let probIndex = 0; probIndex < 4; ++probIndex) {
-				for(const key in CandidateManager.candidates) {
-					const candidate = CandidateManager.candidates[key];
+			let maxColorCount = 0;
+			for(const key in CandidateManager.candidates) {
+				const candidate = CandidateManager.candidates[key];
+				if(candidate.colors.length > maxColorCount) {
+					maxColorCount = candidate.colors.length;
+				}
+			}
+
+			for(const key in CandidateManager.candidates) {
+				const candidate = CandidateManager.candidates[key];
+				for(let probIndex = 0; probIndex < /*candidate.colors.length*/ maxColorCount; ++probIndex) {
+					if(ChartManager.chartData.datasets[probIndex] === undefined) {
+						ChartManager.chartData.datasets.push({});
+						ChartManager.chartData.datasets[probIndex].data = [];
+						ChartManager.chartData.datasets[probIndex].backgroundColor = [];
+					}
 					const count = candidate.probVoteCounts[probIndex];
 					ChartManager.chartData.datasets[probIndex].data.push(count);
 					const color = candidate.colors[probIndex];
@@ -1274,6 +1279,11 @@ class ChartManager {
 			for(const key in CandidateManager.candidates) {
 				const candidate = CandidateManager.candidates[key];
 				const count = candidate.voteCount;
+				if(ChartManager.chartData.datasets[0] === undefined) {
+					ChartManager.chartData.datasets[0] = {};
+					ChartManager.chartData.datasets[0].data = [];
+					ChartManager.chartData.datasets[0].backgroundColor = [];
+				}
 				ChartManager.chartData.datasets[0].data.push(count);
 				if(key === 'Tossup') {
 					const color = candidate.colors[2];
@@ -1305,28 +1315,28 @@ class ChartManager {
 			if(candidateIndex == 0) {
 				color = CandidateManager.candidates['Tossup'].colors[CandidateManager.tossupColor];
 				ChartManager.chartData.labels[0] = 'Tossup';
-				ChartManager.chartData.datasets[0].data[0] = voteCount;
+				ChartManager.chartData.datasets[0].data.push(voteCount);
 				ChartManager.chartData.datasets[0].backgroundColor.push(color);
 			} else if(ChartManager.chartLeans) {
-				for(let probIndex = 0; probIndex < 8; ++probIndex) {
+				for(let probIndex = 0; probIndex < candidate.colors.length; ++probIndex) {
 					const count = candidate.probVoteCounts[probIndex];
 					color = candidate.colors[probIndex];
 					const index = (probIndex + (candidateIndex * 8)) - 7;
 					ChartManager.chartData.labels[index] = name;
-					ChartManager.chartData.datasets[0].data[index] = count;
+					ChartManager.chartData.datasets[0].data.push(count);
 					ChartManager.chartData.datasets[0].backgroundColor.push(color);
 				}
 			} else {
 				const count = candidate.voteCount;
 				color = candidate.colors[0];
 				ChartManager.chartData.labels[candidateIndex] = name;
-				ChartManager.chartData.datasets[0].data[candidateIndex] = count;
+				ChartManager.chartData.datasets[0].data.push(count);
 				ChartManager.chartData.datasets[0].backgroundColor.push(color);
 			}
 		}
 	}
 
-	static updateBattleChart2() {
+	static updateBattleChart() {
 		if(Object.keys(CandidateManager.candidates).length > 3) {
 			if(mobile) {
 				ChartManager.setChart('pie', 'bottom');
@@ -1356,13 +1366,9 @@ class ChartManager {
 
 			const bar = document.getElementById("bar-" + candidateIndex);
 			bar.style.flexBasis = "" + (candidate.voteCount / totalVotes) * 100 + "%";
-			/*topbar.style.flexBasis = '' + 
-				(candidate.voteCount / totalVotes) * 100 + '%';
-				*/
 			if(ChartManager.chartLeans) {
 				for(const index in candidate.colors) {
 					let part = document.getElementById(candidateIndex + "-" + index);
-					console.log(part);
 					if(part === null) {
 						part = document.createElement("div");
 						part.classList.add("bar-part");
@@ -1388,184 +1394,20 @@ class ChartManager {
 				for(const index in candidate.colors) {
 					const part = document.getElementById(candidateIndex + "-" + index);
 					if(part) {
-						if(index === 0) {
+						if(index === "0") {
+							alert("testing");
 							part.style.flexBasis = "100%";
-							part.style.background = candidate.colors[index];
+							part.style.background = candidate.colors[0];
+							if(ChartManager.chartLabels) { 
+								part.innerHTML = "<p>" + candidate.probVoteCounts.reduce((a,b) => a + b, 0) + "</p>";
+							} else {
+								part.innerHTML = "<p></p>";
+							}
 						}  else {
 							part.style.flexBasis = "0%";
-							part.style.background = candidate.colors[index];
-						}
-						if(ChartManager.chartLabels) { 
-							part.innerHTML = "<p>" + candidate.probVoteCounts.reduce((a,b) => a + b, 0) + "</p>";
-						} else {
+							part.style.background = candidate.colors[0];
 							part.innerHTML = "<p></p>";
 						}
-					}
-				}
-			}
-		}
-	}
-
-	static updateBattleChart() {
-
-		if(Object.keys(CandidateManager.candidates).length > 3) {
-			if(mobile) {
-				ChartManager.setChart('pie', 'bottom');
-			} else {
-				ChartManager.setChart('pie');
-			}
-
-			return;
-		}
-
-		var tossup = document.getElementById('tossupbar');
-
-		var topbar = document.getElementById('topbar');
-		var topbarSolid = document.getElementById('topbar-solid');
-		var topbarLikely = document.getElementById('topbar-likely');
-		var topbarLean = document.getElementById('topbar-lean');
-		var topbarTilt = document.getElementById('topbar-tilt');
-
-		var bottombar = document.getElementById('bottombar');
-		var bottombarSolid = document.getElementById('bottombar-solid');
-		var bottombarLikely = document.getElementById('bottombar-likely');
-		var bottombarLean = document.getElementById('bottombar-lean');
-		var bottombarTilt = document.getElementById('bottombar-tilt');
-
-		// this is for when the candidates get removed
-		// if a candidate gets removed, it will not get cleared from
-		// the graph in the loop below
-		topbar.style.flexBasis = '';
-		bottombar.style.flexBasis = '';
-
-		var candidateIndex = -1;
-		for(var key in CandidateManager.candidates) {
-			++candidateIndex;
-
-			var candidate = CandidateManager.candidates[key];
-
-			if(candidateIndex == 0) {
-				tossup.style.background = candidate.colors[2];
-				
-				tossup.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
-				if(ChartManager.chartLabels) {
-					tossup.innerHTML = '<p>' + candidate.voteCount + '</p>';
-				} else {
-					tossup.innerHTML = '<p></p>';
-				}
-			} else if(candidateIndex == 1) {
-				topbar.style.flexBasis = '' + 
-					(candidate.voteCount / totalVotes) * 100 + '%';
-				if(ChartManager.chartLeans) {
-					topbarSolid.style.flexBasis = '' + 
-						(candidate.probVoteCounts[0] / candidate.voteCount) * 100 + '%';
-					topbarSolid.style.background = candidate.colors[0];
-
-					topbarLikely.style.flexBasis = '' + 
-						(candidate.probVoteCounts[1] / candidate.voteCount) * 100 + '%';
-					topbarLikely.style.background = candidate.colors[1];
-
-					topbarLean.style.flexBasis = '' + 
-						(candidate.probVoteCounts[2] / candidate.voteCount) * 100 + '%';
-					topbarLean.style.background = candidate.colors[2];
-
-					topbarTilt.style.flexBasis = '' +
-						(candidate.probVoteCounts[3] / candidate.voteCount) * 100 + '%';
-					topbarTilt.style.background = candidate.colors[3];
-					
-					if(ChartManager.chartLabels) {
-						topbarSolid.innerHTML = '<p>'+candidate.probVoteCounts[0]+'</p>';
-						topbarLikely.innerHTML = '<p>'+candidate.probVoteCounts[1]+'</p>';
-						topbarLean.innerHTML = '<p>'+candidate.probVoteCounts[2]+'</p>';
-						topbarTilt.innerHTML = '<p>' + candidate.probVoteCounts[3] + '</p>';
-					} else {
-						topbarSolid.innerHTML = '<p></p>';
-						topbarLikely.innerHTML = '<p></p>';
-						topbarLean.innerHTML = '<p></p>';
-						topbarTilt.innerHTML = '<p></p>';
-					}
-				} else {
-					topbarSolid.style.flexBasis = '100%'; 
-					topbarSolid.style.background = candidate.colors[0];
-					topbarLikely.style.flexBasis = '0%';
-					topbarLikely.style.background = candidate.colors[1];
-					topbarLean.style.flexBasis = '0%'; 
-					topbarLean.style.background = candidate.colors[2];
-					topbarTilt.style.flexBasis = '0%';
-					topbarTilt.style.background = candidate.colors[3];
-
-					if(ChartManager.chartLabels) {
-						topbarSolid.innerHTML = '<p>' + (
-							candidate.probVoteCounts[0] 
-							+ candidate.probVoteCounts[1]
-							+ candidate.probVoteCounts[2]
-							+ candidate.probVoteCounts[3]) + '</p>';
-						topbarLikely.innerHTML = '<p></p>';
-						topbarLean.innerHTML = '<p></p>';
-						topbarTilt.innerHTML = '<p></p>';
-					} else {
-						topbarSolid.innerHTML = '<p></p>';
-						topbarLikely.innerHTML = '<p></p>';
-						topbarLean.innerHTML = '<p></p>';
-						topbarTilt.innerHTML = '<p></p>';
-					}
-				}
-
-			} else if(candidateIndex == 2) {
-				bottombar.style.flexBasis = '' + 
-					(candidate.voteCount / totalVotes) * 100 + '%';
-				if(ChartManager.chartLeans) {
-					bottombarSolid.style.flexBasis = '' + 
-						(candidate.probVoteCounts[0] / candidate.voteCount) * 100 + '%';
-					bottombarSolid.style.background = candidate.colors[0];
-
-					bottombarLikely.style.flexBasis = '' + 
-						(candidate.probVoteCounts[1] / candidate.voteCount) * 100 + '%';
-					bottombarLikely.style.background = candidate.colors[1];
-
-					bottombarLean.style.flexBasis = '' + 
-						(candidate.probVoteCounts[2] / candidate.voteCount) * 100 + '%';
-					bottombarLean.style.background = candidate.colors[2];
-					
-					bottombarTilt.style.flexBasis = '' +
-						(candidate.probVoteCounts[3] / candidate.voteCount) * 100 + '%';
-					bottombarTilt.style.background = candidate.colors[3];
-
-					if(ChartManager.chartLabels) {
-						bottombarSolid.innerHTML = '<p>'+candidate.probVoteCounts[0]+'</p>';
-						bottombarLikely.innerHTML = '<p>'+candidate.probVoteCounts[1]+'</p>';
-						bottombarLean.innerHTML = '<p>'+candidate.probVoteCounts[2]+'</p>';
-						bottombarTilt.innerHTML = '<p>' + candidate.probVoteCounts[3] + '</p>';
-					} else {
-						bottombarSolid.innerHTML = '<p></p>';
-						bottombarLikely.innerHTML = '<p></p>';
-						bottombarLean.innerHTML = '<p></p>';
-						bottombarTilt.innerHTML = '<p></p>';
-					}
-				} else {	
-					bottombarSolid.style.flexBasis = '100%';
-					bottombarSolid.style.background = candidate.colors[0];
-					bottombarLikely.style.flexBasis = '0%';
-					bottombarLikely.style.background = candidate.colors[1];
-					bottombarLean.style.flexBasis = '0%'; 
-					bottombarLean.style.background = candidate.colors[2];
-					bottombarTilt.style.flexBasis = '0%';
-					bottombarTilt.style.background = candidate.colors[3];
-
-					if(ChartManager.chartLabels) {
-						bottombarSolid.innerHTML = '<p>' + (
-							candidate.probVoteCounts[0] 
-							+ candidate.probVoteCounts[1]
-							+ candidate.probVoteCounts[2]
-							+ candidate.probVoteCounts[3]) + '</p>';
-						bottombarLikely.innerHTML = '<p></p>';
-						bottombarLean.innerHTML = '<p></p>';
-						bottombarTilt.innerHTML = '<p></p>';
-					} else {
-						bottombarSolid.innerHTML = '<p></p>';
-						bottombarLikely.innerHTML = '<p></p>';
-						bottombarLean.innerHTML = '<p></p>';
-						bottombarTilt.innerHTML = '<p></p>';
 					}
 				}
 			}
@@ -1588,7 +1430,7 @@ class ChartManager {
 	static toggleChartLeans() {
 		ChartManager.chartLeans = !ChartManager.chartLeans;
 		ChartManager.rebuildChart();
-		ChartManager.updateBattleChart2();
+		ChartManager.updateBattleChart();
 	}
 }
 
@@ -6464,7 +6306,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v4.6.1';
+const currentCache = 'v4.6.5';
 
 let states = [];
 let lands = [];
