@@ -70,12 +70,13 @@ class CandidateManager {
 				state.delegates[newname] = state.delegates[oldname];
 				state.delegates[oldname] = undefined;
 			}
-
-			if(state.colorValue > candidate.colors.length) {
+		
+			if(state.colorValue >= candidate.colors.length && (state.candidate === newname || state.candidate === oldname)) {
 				state.setColor(newname, 0, {setDelegates: false});
 			}
 		}
 
+		countVotes();
 		LegendManager.generateLegend();
 		LegendManager.updateLegend();
 		ChartManager.updateChart();

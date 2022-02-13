@@ -405,6 +405,16 @@ class ChartManager {
 
 			const bar = document.getElementById("bar-" + candidateIndex);
 			bar.style.flexBasis = "" + (candidate.voteCount / totalVotes) * 100 + "%";
+			const toRemove = [];
+			for(const part of bar.children) {
+				const spot = parseInt(part.id.split("-")[1]);
+				if(spot >= candidate.colors.length) {
+					toRemove.push(part);
+				}
+			}
+			for(const part of toRemove) {
+				bar.removeChild(part);
+			}
 			if(ChartManager.chartLeans) {
 				for(const index in candidate.colors) {
 					let part = document.getElementById(candidateIndex + "-" + index);
