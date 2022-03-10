@@ -2,7 +2,7 @@
 	<div class="header">
 		<img src="app/res/flags/usa.svg">
 		<h3>
-			Current Congress 
+			Current Maps
 		</h3>
 	</div>
 	<div class="navigation-2">
@@ -12,6 +12,11 @@
 			</a>
 			<a class="navigation-4" href="./app/?t=USA_current_house">
 				House
+			</a>
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=USA_current_governors">
+				Governors
 			</a>
 		</div>
 	</div>

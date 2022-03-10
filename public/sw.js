@@ -1,4 +1,4 @@
-const version = '5.1.0';
+const version = '5.1.3';
 
 const _cache = [
 	'./',

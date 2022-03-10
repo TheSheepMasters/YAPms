@@ -46,6 +46,7 @@ class MapLoader {
 				MapLoader.loadPresetMap('ukd/' + id);
 				break;
 			case "USA_current_senate":
+			case "USA_current_governors":
 			case "USA_2024_projection":
 			case "USA_2020_presidential":
 			case "USA_2020_cook":

@@ -1968,6 +1968,7 @@ class MapLoader {
 				MapLoader.loadPresetMap('ukd/' + id);
 				break;
 			case "USA_current_senate":
+			case "USA_current_governors":
 			case "USA_2024_projection":
 			case "USA_2020_presidential":
 			case "USA_2020_cook":
@@ -6299,7 +6300,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v5.1.0';
+const currentCache = 'v5.1.3';
 
 let states = [];
 let lands = [];

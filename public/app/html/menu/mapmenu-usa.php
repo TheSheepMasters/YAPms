@@ -69,6 +69,10 @@
 	<i class="fas fa-chevron-down"></i>
 	<div class="selectmenu-button-text">House</div>
 </a>
+<a class="selectmenu-button" href="./?t=USA_current_governors">
+	<i class="fas fa-square"></i>
+	<div class="selectmenu-button-text">Governors</div>
+</a>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Blank</div>
 </a>
