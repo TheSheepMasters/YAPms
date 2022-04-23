@@ -9,6 +9,19 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
+				2022 House
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>April 23th 2022</p>
+		<small>This map will be updated periodically</small>
+		<a class="link" href="./app/?t=USA_2022_house">House</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
 				Senate Classes
 			</h3>
 		</div>

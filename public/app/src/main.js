@@ -1,4 +1,4 @@
-const currentCache = 'v5.1.5';
+const currentCache = 'v5.1.6';
 
 let states = [];
 let lands = [];
@@ -48,7 +48,7 @@ function share_afterCenter() {
 			button.style.opacity = '1';
 		}, 3000);
 	}
-
+	
 	const application = document.getElementById('application');
 	domtoimage.toPng(application, {
 		width: application.offsetWidth,

@@ -43,6 +43,10 @@
 	<i class="fas fa-chevron-up"></i>
 	<div class="selectmenu-button-text">Senate</div>
 </a>
+<a class="selectmenu-button" href="./?t=USA_2020_house">
+	<i class="fas fa-chevron-down"></i>
+	<div class="selectmenu-button-text">House</div>
+</a>
 <a class="selectmenu-button" href="./?t=USA_2020_governors_blank">
 	<i class="fas fa-square"></i>
 	<div class="selectmenu-button-text">Governors</div>

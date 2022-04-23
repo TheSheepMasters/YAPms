@@ -22,8 +22,8 @@
 		<a class="link" href="./app/?t=USA_2022_governors">
 			Governors
 		</a>
-		<a class="link" href="./app/?t=USA_2020_presidential">
-			2020 Results
+		<a class="link" href="./app/?t=USA_2022_house">
+			House
 		</a>
 		</div>
 	</div>

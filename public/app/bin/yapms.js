@@ -2257,6 +2257,10 @@ class MapLoader {
 				MapLoader.loadMap("./res/usa/county/usa_county.svg", 16, 0.075, "1", "takeall_noedit", "open");
 				break;
 			case "USA_2022_house":
+				PresetLoader.loadPreset('classic');
+				MapLoader.loadMap("./res/usa/house/04-23-2022-house.svg", 16, 0.01, "1", "takeall_noedit", "open", {enableEraser: true});
+				break;
+			case "USA_2020_house":
 			case "USA_2020_house_blank":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableEraser: true});
@@ -6300,7 +6304,7 @@ function hideMenu(name) {
 	var menu = document.getElementById(name);
 	menu.style.display = 'none';
 }
-const currentCache = 'v5.1.5';
+const currentCache = 'v5.1.6';
 
 let states = [];
 let lands = [];
@@ -6350,7 +6354,7 @@ function share_afterCenter() {
 			button.style.opacity = '1';
 		}, 3000);
 	}
-
+	
 	const application = document.getElementById('application');
 	domtoimage.toPng(application, {
 		width: application.offsetWidth,
