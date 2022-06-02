@@ -1,4 +1,4 @@
-const version = '5.1.7';
+const version = '5.2.0';
 
 const _cache = [
 	'./',
@@ -54,7 +54,7 @@ const _cache = [
 	'./app/res/usa/governors/usa_gubernatorial.svg',
 	'./app/res/usa/senate/usa_senate.svg',
 	'./app/res/usa/county/usa_county.svg',
-	'./app/res/usa/house/12-2-2019-house.svg',
+	'./app/res/usa/house/06-02-2022-house.svg',
 
 	'./app/res/arg/argentina_provinces_buenos.svg',
 	'./app/res/aus/australia_constituencies.svg',

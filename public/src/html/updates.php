@@ -13,8 +13,8 @@
 			</h3>
 		</div>
 		<div class="link-list">
-		<p>April 23th 2022</p>
-		<small>This map will be updated periodically</small>
+		<p>June 2nd 2022</p>
+		<small>Final congressional map</small>
 		<a class="link" href="./app/?t=USA_2022_house">House</a>
 		</div>
 	</div>

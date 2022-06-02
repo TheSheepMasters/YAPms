@@ -336,7 +336,7 @@ class MapLoader {
 				break;
 			case "USA_2022_house":
 				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/house/04-23-2022-house.svg", 16, 0.03, "1", "takeall_noedit", "open", {enableEraser: true});
+				MapLoader.loadMap("./res/usa/house/06-02-2022-house.svg", 16, 0.05, "1", "takeall_noedit", "open", {enableEraser: true});
 				break;
 			case "USA_2020_house":
 			case "USA_2020_house_blank":
