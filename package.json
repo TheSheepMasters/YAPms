@@ -20,7 +20,7 @@
 		"bundleCSS": "cat ./public/app/style/mysaves.css ./public/app/style/input.css ./public/app/style/menu.css ./public/app/style/selectmenu.css ./public/app/style/selectmenu-colors.css ./public/app/style/popup.css ./public/app/style/legend.css ./public/app/style/style.css ./public/app/style/battlechart.css ./public/app/style/yapnews.css ./public/app/style/sidebar.css ./public/app/style/consent.css > ./public/app/bin/yapms.css"
 	},
 	"devDependencies": {
-		"npm-watch": "^0.7.0",
-		"uglify-js": "^3.13.10"
+		"npm-watch": "^0.11.0",
+		"uglify-js": "^3.16.3"
 	}
 }
