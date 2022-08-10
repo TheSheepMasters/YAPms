@@ -146,8 +146,20 @@ a {
 	background: #00aced;
 }
 
+@keyframes mockgovColor {
+	from {
+		background-color: #d87e66
+	}	
+	to {
+		background-color: red;
+	}
+}
+
 .mockgov {
 	background: #d87e66;
+	animation: mockgovColor 1s infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
 }
 
 .redesign {
