@@ -46,6 +46,7 @@
 	<div id="featured">
 	<?php
 		require './src/html/help-box.php';
+		require './src/html/yapms2.php';
 		require './src/html/featured.php';
 	?>
 	</div>

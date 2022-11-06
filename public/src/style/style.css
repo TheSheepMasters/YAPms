@@ -146,6 +146,10 @@ a {
 	background: #00aced;
 }
 
+.github {
+	background: #333333;
+}
+
 @keyframes mockgovColor {
 	from {
 		background-color: #d87e66

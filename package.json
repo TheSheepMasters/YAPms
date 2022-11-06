@@ -16,7 +16,7 @@
 		"serve": "php -S localhost:8000 -t public/",
 		"dev": "npm-watch",
 		"bundleJS": "cat ./public/app/src/Account.js ./public/app/src/Candidate.js ./public/app/src/ChartManager.js ./public/app/src/CookieManager.js ./public/app/src/KeyboardManager.js ./public/app/src/LegendManager.js ./public/app/src/LogoManager.js ./public/app/src/MapManager.js ./public/app/src/MapLoader.js ./public/app/src/PresetLoader.js ./public/app/src/State.js ./public/app/src/click.js ./public/app/src/data.js ./public/app/src/SimulatorData.js ./public/app/src/htmlControl.js ./public/app/src/Simulator.js ./public/app/src/SaveMap.js ./public/app/src/Tools.js ./public/app/src/main.js > ./public/app/bin/yapms.js & npm run compressJS",
-		"compressJS": "uglifyjs --compress --mangle -- ./public/app/bin/yapms.js > ./public/app/bin/yapms.min.js & npm run bundleCSS",
+		"compressJS": "uglifyjs --compress -- ./public/app/bin/yapms.js > ./public/app/bin/yapms.min.js & npm run bundleCSS",
 		"bundleCSS": "cat ./public/app/style/mysaves.css ./public/app/style/input.css ./public/app/style/menu.css ./public/app/style/selectmenu.css ./public/app/style/selectmenu-colors.css ./public/app/style/popup.css ./public/app/style/legend.css ./public/app/style/style.css ./public/app/style/battlechart.css ./public/app/style/yapnews.css ./public/app/style/sidebar.css ./public/app/style/consent.css > ./public/app/bin/yapms.css"
 	},
 	"devDependencies": {

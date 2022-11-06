@@ -1,18 +1,10 @@
 <div id="sidebar">
 	<div id="sidebar-social">
-		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/kT9dMHY" target="_blank"><div id="sidebar-discord" class="sidebar-button">
-			Discord
-		</div></a>
 		<a id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
 			Reddit
 		</div></a>
 		<a id="sidebar-twitter-link" class="social-link" href="https://twitter.com/YAPmsOfficial" target="_blank"><div id="sidebar-twitter" class="sidebar-button">
 			Twitter
-		</div></a>
-	</div>
-	<div id="sidebar-social">
-		<a id="sidebar-mock-gov-link" class="social-link" href="https://discord.gg/Rd9nb9Bqa9" target="_blank"><div id="sidebar-mock-gov" class="sidebar-button">
-			<i class="fas fa-landmark"></i> Mock Gov
 		</div></a>
 	</div>
 	<div id="sidebar-header">
