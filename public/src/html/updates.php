@@ -9,6 +9,31 @@
 		<div class="info-box-header">
 			<img src="app/res/flags/usa.svg">
 			<h3>
+				2024 Senate
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>December 20th 2022</p>
+		<small>The battleground for the 2024 senate election</small>
+		<a class="link" href="./app/?t=USA_2024_senate">2024 Senate</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
+				Current Senate
+			</h3>
+		</div>
+		<div class="link-list">
+		<p>December 20th 2022</p>
+		<a class="link" href="./app/?t=USA_current_senate">Current Senate</a>
+		</div>
+	</div>
+	<div class="info-box">
+		<div class="info-box-header">
+			<img src="app/res/flags/usa.svg">
+			<h3>
 				2022 House
 			</h3>
 		</div>
@@ -79,32 +104,6 @@
 		<div class="link-list">
 		<p>November 4th 2021</p>
 		<a class="link" href="./app/?t=NewYork_2020_state_lower">New York 2020 State Lower</a>
-		</div>
-	</div>
-	<div class="info-box">
-		<div class="info-box-header">
-			<img src="app/res/flags/usa.svg">
-			<h3>
-				Update
-			</h3>
-		</div>
-		<div class="link-list">
-		<p>May 29th 2021</p>
-		<a class="link" href="./app/?t=USA_current_senate">Current Senate</a>
-		<a class="link" href="./app/?t=USA_current_house">Current House</a>
-		</div>
-	</div>
-	<div class="info-box">
-		<div class="info-box-header">
-			<img src="app/res/flags/usa.svg">
-			<h3>
-				New Map
-			</h3>
-		</div>
-		<div class="link-list">
-		<a class="link" href="./app/?t=USA_2024_presidential">2024 Presidential</a>
-		<a class="link" href="./app/?t=USA_2022_senate">2022 Senate</a>
-		<a class="link" href="./app/?t=USA_2022_governors">2022 Governors</a>
 		</div>
 	</div>
 </div>

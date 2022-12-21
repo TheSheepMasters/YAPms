@@ -17,6 +17,10 @@
 	<i class="fas fa-user"></i>
 	<div class="selectmenu-button-text">Presidential</div>
 </a>
+<a class="selectmenu-button" href="./?t=USA_2024_senate">
+	<i class="fas fa-chevron-up"></i>
+	<div class="selectmenu-button-text">Senate</div>
+</a>
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">National 2022</div>
 </a>

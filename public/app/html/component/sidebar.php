@@ -1,11 +1,10 @@
 <div id="sidebar">
 	<div id="sidebar-social">
-		<a id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
-			Reddit
-		</div></a>
-		<a id="sidebar-twitter-link" class="social-link" href="https://twitter.com/YAPmsOfficial" target="_blank"><div id="sidebar-twitter" class="sidebar-button">
-			Twitter
-		</div></a>
+		<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/Rq5bk3eDwm" target="_blank">
+			<div id="sidebar-discord" class="sidebar-button">
+				YAPms 2 Beta - Discord
+			</div>
+		</a>
 	</div>
 	<div id="sidebar-header">
 		<h1>

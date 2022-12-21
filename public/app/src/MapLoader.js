@@ -306,6 +306,10 @@ class MapLoader {
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/presidential/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "takeall", "open");
 				break;
+			case "USA_2024_senate":
+				PresetLoader.loadPreset('classic');
+				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 1, "1", "senatorial", "2024");
+				break;
 			case "USA_2022_senate":
 				PresetLoader.loadPreset('classic');
 				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 1, "1", "senatorial", "2022");
